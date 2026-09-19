@@ -1,0 +1,9 @@
+torch
+torchvision
+open_clip_torch
+numpy
+scikit-learn
+matplotlib
+umap-learn
+pyyaml
+tqdm

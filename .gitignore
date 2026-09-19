@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc 
+.pytest_cache/
+#these would cause bloat in my repo since they r machine specific
+
+.venv/
+env/
+venv/
+#these are huge and should be recreated using requirements.txt
+
+data/
+datasets/
+STL10/
+PACS/
+
+*.pth
+*.pt
+*.bin
+*.onnx
+checkpoints/
+
+.DS_Store
