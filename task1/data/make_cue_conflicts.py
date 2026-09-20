@@ -160,8 +160,10 @@ def main():
                 c_pos, c_gidx = c_pool[c_sel[i]]
                 _,     s_gidx = s_pool[s_sel[i]]
 
-                c_pil = Image.fromarray(te_ds.data[c_gidx]).convert('RGB').resize((224, 224), Image.BILINEAR)
-                s_pil = Image.fromarray(te_ds.data[s_gidx]).convert('RGB').resize((224, 224), Image.BILINEAR)
+                # te_ds[gidx] returns a correct RGB PIL (STL10.data is channels-first,
+                # so indexing the dataset avoids a manual transpose); matches run_task1.py
+                c_pil = te_ds[c_gidx][0].resize((224, 224), Image.BILINEAR)
+                s_pil = te_ds[s_gidx][0].resize((224, 224), Image.BILINEAR)
 
                 out_t   = stylize(_to_normed(c_pil, device), _to_normed(s_pil, device),
                                   vgg, device, args.n_steps)

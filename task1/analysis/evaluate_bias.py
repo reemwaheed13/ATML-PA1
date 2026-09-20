@@ -4,6 +4,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision.datasets import STL10
 from PIL import Image
+import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from common.seed import set_seed
@@ -56,12 +57,13 @@ def main():
     parser.add_argument('--cache_dir',   default='./cache/features')
     parser.add_argument('--ckpt_dir',    default='./cache/checkpoints')
     parser.add_argument('--results_dir', default='./results')
+    parser.add_argument('--figures_dir', default='./report/figures')
     args = parser.parse_args()
 
     set_seed(SEED)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    with open('results/task1_splits.json') as f:
+    with open(os.path.join(args.results_dir, 'task1_splits.json')) as f:
         _, _, _, test_idx = json.load(f)
     test_idx = np.array(test_idx)
 
@@ -88,6 +90,7 @@ def main():
     ]
 
     results = {}
+    cue_examples = {}   # per-backbone per-conflict predictions for qualitative failure analysis
 
     for name, BackboneClass, dim in configs:
         print(f"\n--- {name} ---")
@@ -167,6 +170,17 @@ def main():
             }
             print('  cue_conflict', r['cue_conflict'])
 
+            # per-image records so the report can pick informative agreements/failures
+            cue_examples[name] = [{
+                'filename':      _cc[k]['filename'],
+                'content_label': int(_cc_c[k]),
+                'style_label':   int(_cc_s[k]),
+                'pred':          int(preds[k]),
+                'category':      'shape'   if preds[k] == _cc_c[k]
+                                 else 'texture' if preds[k] == _cc_s[k]
+                                 else 'other',
+            } for k in range(n_total)]
+
         results[name] = r
         print(r)
 
@@ -175,6 +189,30 @@ def main():
     with open(out, 'w') as f:
         json.dump(results, f, indent=2)
     print(f"\nsaved → {out}")
+
+    if cue_examples:
+        cc_out = os.path.join(args.results_dir, 'task1_cue_conflict_examples.json')
+        with open(cc_out, 'w') as f:
+            json.dump(cue_examples, f, indent=2)
+        print(f"saved → {cc_out}")
+
+    # translation curve: accuracy and consistency vs displacement (Required Evidence)
+    os.makedirs(args.figures_dir, exist_ok=True)
+    deltas = [0, 8, 16, 32]
+    fig, (ax_acc, ax_con) = plt.subplots(1, 2, figsize=(11, 4))
+    for name in results:
+        tr = results[name]['translation']
+        ax_acc.plot(deltas, [tr[d]['acc']         for d in deltas], marker='o', label=name)
+        ax_con.plot(deltas, [tr[d]['consistency'] for d in deltas], marker='o', label=name)
+    ax_acc.set(xlabel='displacement (px)', ylabel='top-1 accuracy', title='Translation: accuracy')
+    ax_con.set(xlabel='displacement (px)', ylabel='prediction consistency', title='Translation: consistency')
+    for ax in (ax_acc, ax_con):
+        ax.set_xticks(deltas); ax.legend(); ax.grid(alpha=0.3)
+    fig.tight_layout()
+    curve_path = os.path.join(args.figures_dir, 'translation_curve.png')
+    fig.savefig(curve_path, dpi=150)
+    plt.close(fig)
+    print(f"saved → {curve_path}")
 
 
 if __name__ == '__main__':
