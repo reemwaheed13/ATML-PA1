@@ -3,6 +3,7 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision.datasets import STL10
+from PIL import Image
 from tqdm import tqdm
 
 from common.seed import set_seed
@@ -19,23 +20,26 @@ SEED = 6304
 
 #basically we apply the transformation on the common 224 canvas, normalize and evaluate
 class TransformedSubset(Dataset):
-    def __init__(self, base_ds, indices, transform_fn, normalize):
+    def __init__(self, base_ds, indices, transform_fn, normalize, pass_idx=False):
         self.base = base_ds
         self.indices = indices
         self.transform_fn = transform_fn  # pil → pil (the intervention, on 224)
         self.normalize = normalize        # pil → tensor (backbone normalization)
+        self.pass_idx = pass_idx          # True only for patch_shuffle (per-image perm)
 
     def __len__(self):
         return len(self.indices)
 
     def __getitem__(self, i):
         img, label = self.base[self.indices[i]]
-        img = self.transform_fn(resize_224(img))   # intervene on common 224 canvas
+        img = resize_224(img)
+        img = self.transform_fn(img, i) if self.pass_idx else self.transform_fn(img)
         return self.normalize(img), label
 
 
-def eval_transform(transform_fn, backbone, head, te_ds, test_idx, normalize, device):
-    loader = DataLoader(TransformedSubset(te_ds, test_idx, transform_fn, normalize),
+def eval_transform(transform_fn, backbone, head, te_ds, test_idx, normalize, device,
+                   pass_idx=False):
+    loader = DataLoader(TransformedSubset(te_ds, test_idx, transform_fn, normalize, pass_idx),
                         batch_size=64, shuffle=False, num_workers=2)
     logits, labels = [], []
     with torch.no_grad():
@@ -62,6 +66,20 @@ def main():
     test_idx = np.array(test_idx)
 
     te_ds = STL10(root=args.data_dir, split='test', download=False)
+
+    # pre-load conflict images once; per-backbone norm applied inside the loop
+    _cc_path = os.path.join(args.results_dir, 'cue_conflicts_metadata.json')
+    if os.path.exists(_cc_path):
+        with open(_cc_path) as f:
+            _cc = json.load(f)['conflicts']
+        _cc_dir  = os.path.join(args.results_dir, 'cue_conflicts')
+        _cc_pils = [Image.open(os.path.join(_cc_dir, c['filename'])).convert('RGB') for c in _cc]
+        _cc_c    = np.array([c['content_label'] for c in _cc])
+        _cc_s    = np.array([c['style_label']   for c in _cc])
+        print(f"loaded {len(_cc)} cue-conflict images")
+    else:
+        _cc = None
+        print("cue_conflicts_metadata.json not found — run make_cue_conflicts.py first")
 
     configs = [
         ('resnet', ResNet50Backbone, RESNET50_DIM),
@@ -119,13 +137,35 @@ def main():
                 'consistency': float(np.mean(conss)),
             }
 
-        # patch shuffle
-        ps_logits, _ = eval_transform(patch_shuffle, backbone, head, te_ds, test_idx, norm, device)
+        # patch shuffle — per-image permutation seeded by position in test subset
+        ps_logits, _ = eval_transform(patch_shuffle, backbone, head, te_ds, test_idx, norm, device,
+                                      pass_idx=True)
         r['patch_shuffle'] = {
             'acc':         float(top1_accuracy(ps_logits, labels)),
             'f1':          float(macro_f1(ps_logits, labels)),
             'consistency': float(prediction_consistency(clean_preds, ps_logits.argmax(1))),
         }
+
+        # cue conflict — shape bias and coverage
+        if _cc is not None:
+            preds = []
+            with torch.no_grad():
+                for start in range(0, len(_cc_pils), 64):
+                    batch = torch.stack([norm(img) for img in _cc_pils[start:start+64]]).to(device)
+                    preds.append(head(backbone(batch).cpu()).argmax(1).numpy())
+            preds     = np.concatenate(preds)
+            n_shape   = int((preds == _cc_c).sum())
+            n_texture = int((preds == _cc_s).sum())
+            n_total   = len(preds)
+            denom     = n_shape + n_texture
+            r['cue_conflict'] = {
+                'n_shape':    n_shape,
+                'n_texture':  n_texture,
+                'n_other':    n_total - denom,
+                'shape_bias': round(100.0 * n_shape / denom, 2) if denom > 0 else None,
+                'coverage':   round(100.0 * denom / n_total,  2),
+            }
+            print('  cue_conflict', r['cue_conflict'])
 
         results[name] = r
         print(r)

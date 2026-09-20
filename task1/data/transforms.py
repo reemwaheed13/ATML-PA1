@@ -39,20 +39,28 @@ def translate(img, delta, direction):
     return TF.to_pil_image(padded[:, y0:y0+h, x0:x0+w])
 
 
-# One fixed permutation for all images (seed 6304), computed once at import
-rng = np.random.default_rng(6304)
-_PATCH_PERM = rng.permutation(16)
-while np.all(_PATCH_PERM == np.arange(16)):  # re-draw if identity (extremely unlikely)
-    _PATCH_PERM = rng.permutation(16)
+def _perm_for(idx):
+    """Deterministic non-identity 4×4 patch permutation for image index idx, seed 6304."""
+    rng = np.random.default_rng(6304 + idx)
+    p = rng.permutation(16)
+    while np.all(p == np.arange(16)):
+        p = rng.permutation(16)
+    return p
 
 
-def patch_shuffle(img, grid=4):
+def patch_shuffle(img, idx=None, grid=4):
+    """
+    idx: position of the image in the evaluation subset (0-indexed).
+    Each idx gets a distinct permutation, fixed across all scripts and models.
+    If idx is None falls back to idx=0 (should not happen in normal use).
+    """
+    perm = _perm_for(0 if idx is None else idx)
     arr = np.array(img)
     ph, pw = arr.shape[0] // grid, arr.shape[1] // grid
     patches = [arr[i*ph:(i+1)*ph, j*pw:(j+1)*pw]
                for i in range(grid) for j in range(grid)]
     result = np.zeros_like(arr)
-    for dst, src in enumerate(_PATCH_PERM):
+    for dst, src in enumerate(perm):
         i, j = dst // grid, dst % grid
         result[i*ph:(i+1)*ph, j*pw:(j+1)*pw] = patches[src]
     return Image.fromarray(result)
@@ -65,6 +73,9 @@ if __name__ == "__main__":
     for d in [8, 16, 32]:
         for dr in ['right', 'left', 'up', 'down']:
             assert translate(img, d, dr).size == (224, 224)
-    ps = patch_shuffle(img)
+    ps = patch_shuffle(img, idx=0)
     assert ps.size == (224, 224) and not np.array_equal(np.array(ps), np.array(img))
+    # different indices must produce different permutations on the same image
+    ps2 = patch_shuffle(img, idx=1)
+    assert not np.array_equal(np.array(ps), np.array(ps2)), "idx 0 and 1 should differ"
     print("all transforms ok")
