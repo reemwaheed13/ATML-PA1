@@ -8,10 +8,10 @@ env/
 venv/
 #these are huge and should be recreated using requirements.txt
 
-data/
-datasets/
-STL10/
-PACS/
+/data/
+/datasets/
+/STL10/
+/PACS/
 
 *.pth
 *.pt
