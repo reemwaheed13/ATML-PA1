@@ -1,6 +1,22 @@
 import numpy as np
 from PIL import Image
+import torchvision.transforms as T
 import torchvision.transforms.functional as TF
+
+# normalization constants per backbone
+IMAGENET_MEAN = [0.485, 0.456, 0.406]
+IMAGENET_STD  = [0.229, 0.224, 0.225]
+CLIP_MEAN = [0.48145466, 0.4578275, 0.40821073]   # openai clip weights
+CLIP_STD  = [0.26862954, 0.26130258, 0.27577711]
+
+# common 224 canvas — all interventions are built on this, per the manual
+resize_224 = T.Resize((224, 224))
+
+
+def normalize_for(name):
+    # tensor + per-model normalize only (no resize/crop, already 224)
+    mean, std = (CLIP_MEAN, CLIP_STD) if name == 'clip' else (IMAGENET_MEAN, IMAGENET_STD)
+    return T.Compose([T.ToTensor(), T.Normalize(mean, std)])
 
 
 def to_grayscale(img):
