@@ -1,0 +1,11 @@
+{
+ "date": "2026-09-21",
+ "code_commit": "e179a5efbf91632992f72b121eb34cbbd7fe2bb1",
+ "gpu": "NVIDIA L4",
+ "python": "3.13.15",
+ "torch": "2.11.0+cu128",
+ "torchvision": "0.26.0+cu128",
+ "open_clip": "3.3.0",
+ "sklearn": "1.6.1",
+ "seed": 6304
+}
