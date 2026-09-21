@@ -1,0 +1,47 @@
+{
+  "clean": {
+    "acc": 0.934,
+    "macro_f1": 0.9327825612360451,
+    "confidence": 0.9264334440231323
+  },
+  "grayscale": {
+    "acc": 0.898,
+    "f1": 0.8978289182440733,
+    "consistency": 0.922
+  },
+  "hue_rotation": {
+    "acc": 0.918,
+    "f1": 0.916494103335522,
+    "consistency": 0.922
+  },
+  "translation": {
+    "0": {
+      "acc": 0.934,
+      "consistency": 1.0
+    },
+    "8": {
+      "acc": 0.9435,
+      "consistency": 0.958
+    },
+    "16": {
+      "acc": 0.941,
+      "consistency": 0.9590000000000001
+    },
+    "32": {
+      "acc": 0.9225000000000001,
+      "consistency": 0.961
+    }
+  },
+  "patch_shuffle": {
+    "acc": 0.766,
+    "f1": 0.7640971756081424,
+    "consistency": 0.778
+  },
+  "cue_conflict": {
+    "n_shape": 224,
+    "n_texture": 19,
+    "n_other": 57,
+    "shape_bias": 92.18,
+    "coverage": 81.0
+  }
+}

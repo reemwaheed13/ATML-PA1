@@ -1,0 +1,36 @@
+{
+ "source": "task1/analysis/representation.py",
+ "sklearn": "1.6.1",
+ "module_constants": {
+  "SEED": "6304",
+  "STL10_CLASSES": "['airplane', 'bird', 'car', 'cat', 'deer', 'dog', 'horse', 'monkey', 'ship', 'truck']"
+ },
+ "projection_calls": [
+  {
+   "call": "TSNE",
+   "kwargs": {
+    "n_components": "2",
+    "random_state": "SEED",
+    "perplexity": "30"
+   }
+  }
+ ],
+ "sklearn_tsne_defaults_for_unspecified_args": {
+  "angle": 0.5,
+  "early_exaggeration": 12.0,
+  "init": "pca",
+  "learning_rate": "auto",
+  "max_iter": null,
+  "method": "barnes_hut",
+  "metric": "euclidean",
+  "metric_params": null,
+  "min_grad_norm": 1e-07,
+  "n_components": 2,
+  "n_iter": "deprecated",
+  "n_iter_without_progress": 300,
+  "n_jobs": null,
+  "perplexity": 30.0,
+  "random_state": null,
+  "verbose": 0
+ }
+}
