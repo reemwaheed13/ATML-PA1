@@ -160,7 +160,7 @@ def main():
     clip_bb = CLIPBackbone().to(device)
     scale = clip_bb.clip.logit_scale.exp().item()  # clip's learned temperature (~100)
     tokenizer = open_clip.get_tokenizer('ViT-B-32')
-    text_tok  = tokenizer([f"a photo of a {c}" for c in STL10_CLASSES]).to(device)
+    text_tok  = tokenizer([f"a photo of a {c}." for c in STL10_CLASSES]).to(device)
     with torch.no_grad():
         text_f = clip_bb.clip.encode_text(text_tok)
         text_f = text_f / text_f.norm(dim=-1, keepdim=True)

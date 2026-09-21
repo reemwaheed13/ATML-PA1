@@ -81,7 +81,7 @@ def zero_shot_clip_predict(clip_backbone, images, class_names):
     """
     model = clip_backbone.clip
     tokenizer = open_clip.get_tokenizer('ViT-B-32')
-    prompts = [f"a photo of a {c}" for c in class_names]
+    prompts = [f"a photo of a {c}." for c in class_names]
     text_tokens = tokenizer(prompts).to(images.device)
     with torch.no_grad():
         text_features = model.encode_text(text_tokens)
