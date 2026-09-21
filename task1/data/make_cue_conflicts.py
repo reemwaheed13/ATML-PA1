@@ -25,7 +25,7 @@ CLASS_PAIRS = [
 ]
 
 N_PER_DIR = 25
-OPT_STEPS = 80
+OPT_STEPS = 300
 LR        = 0.05
 STYLE_W   = 1e4
 TV_W      = 1e-5
@@ -121,12 +121,12 @@ def main():
     parser.add_argument('--results_dir', default='./results')
     parser.add_argument('--out_dir',     default='./results/cue_conflicts')
     parser.add_argument('--n_per_dir',   type=int, default=N_PER_DIR)
-    parser.add_argument('--n_steps',     type=int, default=OPT_STEPS)
+    parser.add_argument('--steps',       type=int, default=OPT_STEPS)
     args = parser.parse_args()
 
     set_seed(SEED)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"using {device}  |  {args.n_per_dir} attempts/dir  |  {args.n_steps} steps/image")
+    print(f"using {device}  |  {args.n_per_dir} attempts/dir  |  {args.steps} steps/image")
 
     with open(os.path.join(args.results_dir, 'task1_splits.json')) as f:
         _, _, _, test_idx = json.load(f)
@@ -166,7 +166,7 @@ def main():
                 s_pil = te_ds[s_gidx][0].resize((224, 224), Image.BILINEAR)
 
                 out_t   = stylize(_to_normed(c_pil, device), _to_normed(s_pil, device),
-                                  vgg, device, args.n_steps)
+                                  vgg, device, args.steps)
                 out_pil = _to_pil(out_t)
                 arr     = np.array(out_pil)
 
