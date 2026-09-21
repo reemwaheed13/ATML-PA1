@@ -1,0 +1,4 @@
+photo           macro-F1=0.9641  acc=0.9701
+art_painting    macro-F1=0.9139  acc=0.9146
+cartoon         macro-F1=0.9469  acc=0.9403
+mean            macro-F1=0.9416  acc=0.9417
