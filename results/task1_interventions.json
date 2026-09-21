@@ -1,0 +1,128 @@
+{
+  "resnet": {
+    "grayscale": {
+      "acc": 0.942,
+      "f1": 0.9422820764901706,
+      "consistency": 0.954
+    },
+    "hue_rotation": {
+      "acc": 0.944,
+      "f1": 0.9440751643440197,
+      "consistency": 0.952
+    },
+    "translation": {
+      "0": {
+        "acc": 0.97,
+        "consistency": 1.0
+      },
+      "8": {
+        "acc": 0.961,
+        "consistency": 0.9875
+      },
+      "16": {
+        "acc": 0.961,
+        "consistency": 0.986
+      },
+      "32": {
+        "acc": 0.955,
+        "consistency": 0.98
+      }
+    },
+    "patch_shuffle": {
+      "acc": 0.886,
+      "f1": 0.8861133157614896,
+      "consistency": 0.904
+    },
+    "cue_conflict": {
+      "n_shape": 187,
+      "n_texture": 57,
+      "n_other": 56,
+      "shape_bias": 76.64,
+      "coverage": 81.33
+    }
+  },
+  "vit": {
+    "grayscale": {
+      "acc": 0.948,
+      "f1": 0.9483938927508337,
+      "consistency": 0.97
+    },
+    "hue_rotation": {
+      "acc": 0.938,
+      "f1": 0.9379323600087407,
+      "consistency": 0.96
+    },
+    "translation": {
+      "0": {
+        "acc": 0.972,
+        "consistency": 1.0
+      },
+      "8": {
+        "acc": 0.968,
+        "consistency": 0.985
+      },
+      "16": {
+        "acc": 0.969,
+        "consistency": 0.9935
+      },
+      "32": {
+        "acc": 0.9670000000000001,
+        "consistency": 0.9875
+      }
+    },
+    "patch_shuffle": {
+      "acc": 0.89,
+      "f1": 0.8910632436210486,
+      "consistency": 0.906
+    },
+    "cue_conflict": {
+      "n_shape": 245,
+      "n_texture": 23,
+      "n_other": 32,
+      "shape_bias": 91.42,
+      "coverage": 89.33
+    }
+  },
+  "clip": {
+    "grayscale": {
+      "acc": 0.926,
+      "f1": 0.9255429920402367,
+      "consistency": 0.934
+    },
+    "hue_rotation": {
+      "acc": 0.92,
+      "f1": 0.9194225163319395,
+      "consistency": 0.938
+    },
+    "translation": {
+      "0": {
+        "acc": 0.968,
+        "consistency": 1.0
+      },
+      "8": {
+        "acc": 0.9630000000000001,
+        "consistency": 0.9685
+      },
+      "16": {
+        "acc": 0.958,
+        "consistency": 0.9645
+      },
+      "32": {
+        "acc": 0.948,
+        "consistency": 0.9655
+      }
+    },
+    "patch_shuffle": {
+      "acc": 0.816,
+      "f1": 0.8141054181879671,
+      "consistency": 0.81
+    },
+    "cue_conflict": {
+      "n_shape": 237,
+      "n_texture": 12,
+      "n_other": 51,
+      "shape_bias": 95.18,
+      "coverage": 83.0
+    }
+  }
+}

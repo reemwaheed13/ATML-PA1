@@ -1,0 +1,4 @@
+,clean_acc,grayscale_acc,grayscale_delta,grayscale_cons,hue_rotation_acc,hue_rotation_delta,hue_rotation_cons,patch_shuffle_acc,patch_shuffle_delta,patch_shuffle_cons
+resnet,0.97,0.942,-0.028,0.954,0.944,-0.026,0.952,0.886,-0.084,0.904
+vit,0.972,0.948,-0.024,0.97,0.938,-0.034,0.96,0.89,-0.082,0.906
+clip,0.968,0.926,-0.042,0.934,0.92,-0.048,0.938,0.816,-0.152,0.81

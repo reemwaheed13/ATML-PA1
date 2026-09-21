@@ -1,0 +1,2144 @@
+{
+  "rejection_rule": "pixel_std<8 or mean<15 or mean>240",
+  "attempted": 300,
+  "rejected": 0,
+  "saved": 300,
+  "settings": {
+    "script": "make_cue_conflicts_v2.py",
+    "steps": 300,
+    "style_scale": 100.0,
+    "style_mode": "native",
+    "n_per_dir": 30,
+    "seed": 6304,
+    "lr": 0.05,
+    "weights": {
+      "content": 1.0,
+      "style": 1000000.0,
+      "tv": 1e-05
+    },
+    "class_pairs": [
+      [
+        "airplane",
+        "bird"
+      ],
+      [
+        "car",
+        "truck"
+      ],
+      [
+        "cat",
+        "dog"
+      ],
+      [
+        "deer",
+        "horse"
+      ],
+      [
+        "monkey",
+        "ship"
+      ]
+    ]
+  },
+  "conflicts": [
+    {
+      "filename": "airplane_shape_bird_tex_000.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 104,
+      "style_pos": 266
+    },
+    {
+      "filename": "airplane_shape_bird_tex_001.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 137,
+      "style_pos": 475
+    },
+    {
+      "filename": "airplane_shape_bird_tex_002.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 293,
+      "style_pos": 202
+    },
+    {
+      "filename": "airplane_shape_bird_tex_003.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 322,
+      "style_pos": 144
+    },
+    {
+      "filename": "airplane_shape_bird_tex_004.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 420,
+      "style_pos": 223
+    },
+    {
+      "filename": "airplane_shape_bird_tex_005.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 495,
+      "style_pos": 450
+    },
+    {
+      "filename": "airplane_shape_bird_tex_006.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 127,
+      "style_pos": 347
+    },
+    {
+      "filename": "airplane_shape_bird_tex_007.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 157,
+      "style_pos": 325
+    },
+    {
+      "filename": "airplane_shape_bird_tex_008.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 192,
+      "style_pos": 256
+    },
+    {
+      "filename": "airplane_shape_bird_tex_009.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 245,
+      "style_pos": 214
+    },
+    {
+      "filename": "airplane_shape_bird_tex_010.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 301,
+      "style_pos": 210
+    },
+    {
+      "filename": "airplane_shape_bird_tex_011.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 290,
+      "style_pos": 345
+    },
+    {
+      "filename": "airplane_shape_bird_tex_012.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 431,
+      "style_pos": 371
+    },
+    {
+      "filename": "airplane_shape_bird_tex_013.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 101,
+      "style_pos": 182
+    },
+    {
+      "filename": "airplane_shape_bird_tex_014.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 380,
+      "style_pos": 3
+    },
+    {
+      "filename": "airplane_shape_bird_tex_015.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 36,
+      "style_pos": 103
+    },
+    {
+      "filename": "airplane_shape_bird_tex_016.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 315,
+      "style_pos": 43
+    },
+    {
+      "filename": "airplane_shape_bird_tex_017.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 75,
+      "style_pos": 70
+    },
+    {
+      "filename": "airplane_shape_bird_tex_018.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 97,
+      "style_pos": 203
+    },
+    {
+      "filename": "airplane_shape_bird_tex_019.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 278,
+      "style_pos": 33
+    },
+    {
+      "filename": "airplane_shape_bird_tex_020.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 453,
+      "style_pos": 264
+    },
+    {
+      "filename": "airplane_shape_bird_tex_021.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 196,
+      "style_pos": 281
+    },
+    {
+      "filename": "airplane_shape_bird_tex_022.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 350,
+      "style_pos": 31
+    },
+    {
+      "filename": "airplane_shape_bird_tex_023.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 262,
+      "style_pos": 449
+    },
+    {
+      "filename": "airplane_shape_bird_tex_024.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 149,
+      "style_pos": 351
+    },
+    {
+      "filename": "airplane_shape_bird_tex_025.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 172,
+      "style_pos": 220
+    },
+    {
+      "filename": "airplane_shape_bird_tex_026.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 185,
+      "style_pos": 27
+    },
+    {
+      "filename": "airplane_shape_bird_tex_027.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 401,
+      "style_pos": 246
+    },
+    {
+      "filename": "airplane_shape_bird_tex_028.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 4,
+      "style_pos": 208
+    },
+    {
+      "filename": "airplane_shape_bird_tex_029.png",
+      "content_label": 0,
+      "style_label": 1,
+      "content_pos": 308,
+      "style_pos": 212
+    },
+    {
+      "filename": "bird_shape_airplane_tex_000.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 144,
+      "style_pos": 293
+    },
+    {
+      "filename": "bird_shape_airplane_tex_001.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 212,
+      "style_pos": 481
+    },
+    {
+      "filename": "bird_shape_airplane_tex_002.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 325,
+      "style_pos": 157
+    },
+    {
+      "filename": "bird_shape_airplane_tex_003.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 281,
+      "style_pos": 101
+    },
+    {
+      "filename": "bird_shape_airplane_tex_004.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 182,
+      "style_pos": 278
+    },
+    {
+      "filename": "bird_shape_airplane_tex_005.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 210,
+      "style_pos": 233
+    },
+    {
+      "filename": "bird_shape_airplane_tex_006.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 313,
+      "style_pos": 431
+    },
+    {
+      "filename": "bird_shape_airplane_tex_007.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 206,
+      "style_pos": 127
+    },
+    {
+      "filename": "bird_shape_airplane_tex_008.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 345,
+      "style_pos": 301
+    },
+    {
+      "filename": "bird_shape_airplane_tex_009.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 102,
+      "style_pos": 4
+    },
+    {
+      "filename": "bird_shape_airplane_tex_010.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 179,
+      "style_pos": 118
+    },
+    {
+      "filename": "bird_shape_airplane_tex_011.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 432,
+      "style_pos": 190
+    },
+    {
+      "filename": "bird_shape_airplane_tex_012.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 31,
+      "style_pos": 315
+    },
+    {
+      "filename": "bird_shape_airplane_tex_013.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 223,
+      "style_pos": 290
+    },
+    {
+      "filename": "bird_shape_airplane_tex_014.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 220,
+      "style_pos": 75
+    },
+    {
+      "filename": "bird_shape_airplane_tex_015.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 475,
+      "style_pos": 57
+    },
+    {
+      "filename": "bird_shape_airplane_tex_016.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 17,
+      "style_pos": 158
+    },
+    {
+      "filename": "bird_shape_airplane_tex_017.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 264,
+      "style_pos": 380
+    },
+    {
+      "filename": "bird_shape_airplane_tex_018.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 208,
+      "style_pos": 350
+    },
+    {
+      "filename": "bird_shape_airplane_tex_019.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 371,
+      "style_pos": 165
+    },
+    {
+      "filename": "bird_shape_airplane_tex_020.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 168,
+      "style_pos": 23
+    },
+    {
+      "filename": "bird_shape_airplane_tex_021.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 247,
+      "style_pos": 294
+    },
+    {
+      "filename": "bird_shape_airplane_tex_022.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 493,
+      "style_pos": 420
+    },
+    {
+      "filename": "bird_shape_airplane_tex_023.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 351,
+      "style_pos": 172
+    },
+    {
+      "filename": "bird_shape_airplane_tex_024.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 88,
+      "style_pos": 149
+    },
+    {
+      "filename": "bird_shape_airplane_tex_025.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 449,
+      "style_pos": 104
+    },
+    {
+      "filename": "bird_shape_airplane_tex_026.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 202,
+      "style_pos": 36
+    },
+    {
+      "filename": "bird_shape_airplane_tex_027.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 292,
+      "style_pos": 140
+    },
+    {
+      "filename": "bird_shape_airplane_tex_028.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 43,
+      "style_pos": 340
+    },
+    {
+      "filename": "bird_shape_airplane_tex_029.png",
+      "content_label": 1,
+      "style_label": 0,
+      "content_pos": 3,
+      "style_pos": 6
+    },
+    {
+      "filename": "car_shape_truck_tex_000.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 409,
+      "style_pos": 147
+    },
+    {
+      "filename": "car_shape_truck_tex_001.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 145,
+      "style_pos": 395
+    },
+    {
+      "filename": "car_shape_truck_tex_002.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 372,
+      "style_pos": 268
+    },
+    {
+      "filename": "car_shape_truck_tex_003.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 148,
+      "style_pos": 153
+    },
+    {
+      "filename": "car_shape_truck_tex_004.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 486,
+      "style_pos": 231
+    },
+    {
+      "filename": "car_shape_truck_tex_005.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 415,
+      "style_pos": 328
+    },
+    {
+      "filename": "car_shape_truck_tex_006.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 253,
+      "style_pos": 331
+    },
+    {
+      "filename": "car_shape_truck_tex_007.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 162,
+      "style_pos": 25
+    },
+    {
+      "filename": "car_shape_truck_tex_008.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 442,
+      "style_pos": 59
+    },
+    {
+      "filename": "car_shape_truck_tex_009.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 366,
+      "style_pos": 44
+    },
+    {
+      "filename": "car_shape_truck_tex_010.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 378,
+      "style_pos": 221
+    },
+    {
+      "filename": "car_shape_truck_tex_011.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 244,
+      "style_pos": 297
+    },
+    {
+      "filename": "car_shape_truck_tex_012.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 239,
+      "style_pos": 240
+    },
+    {
+      "filename": "car_shape_truck_tex_013.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 321,
+      "style_pos": 248
+    },
+    {
+      "filename": "car_shape_truck_tex_014.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 487,
+      "style_pos": 139
+    },
+    {
+      "filename": "car_shape_truck_tex_015.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 128,
+      "style_pos": 29
+    },
+    {
+      "filename": "car_shape_truck_tex_016.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 64,
+      "style_pos": 89
+    },
+    {
+      "filename": "car_shape_truck_tex_017.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 494,
+      "style_pos": 365
+    },
+    {
+      "filename": "car_shape_truck_tex_018.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 394,
+      "style_pos": 429
+    },
+    {
+      "filename": "car_shape_truck_tex_019.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 74,
+      "style_pos": 443
+    },
+    {
+      "filename": "car_shape_truck_tex_020.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 177,
+      "style_pos": 402
+    },
+    {
+      "filename": "car_shape_truck_tex_021.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 251,
+      "style_pos": 159
+    },
+    {
+      "filename": "car_shape_truck_tex_022.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 334,
+      "style_pos": 53
+    },
+    {
+      "filename": "car_shape_truck_tex_023.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 311,
+      "style_pos": 205
+    },
+    {
+      "filename": "car_shape_truck_tex_024.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 406,
+      "style_pos": 426
+    },
+    {
+      "filename": "car_shape_truck_tex_025.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 173,
+      "style_pos": 46
+    },
+    {
+      "filename": "car_shape_truck_tex_026.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 18,
+      "style_pos": 131
+    },
+    {
+      "filename": "car_shape_truck_tex_027.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 225,
+      "style_pos": 84
+    },
+    {
+      "filename": "car_shape_truck_tex_028.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 55,
+      "style_pos": 207
+    },
+    {
+      "filename": "car_shape_truck_tex_029.png",
+      "content_label": 2,
+      "style_label": 9,
+      "content_pos": 38,
+      "style_pos": 230
+    },
+    {
+      "filename": "truck_shape_car_tex_000.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 384,
+      "style_pos": 253
+    },
+    {
+      "filename": "truck_shape_car_tex_001.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 331,
+      "style_pos": 465
+    },
+    {
+      "filename": "truck_shape_car_tex_002.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 342,
+      "style_pos": 64
+    },
+    {
+      "filename": "truck_shape_car_tex_003.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 434,
+      "style_pos": 370
+    },
+    {
+      "filename": "truck_shape_car_tex_004.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 235,
+      "style_pos": 346
+    },
+    {
+      "filename": "truck_shape_car_tex_005.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 318,
+      "style_pos": 114
+    },
+    {
+      "filename": "truck_shape_car_tex_006.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 363,
+      "style_pos": 314
+    },
+    {
+      "filename": "truck_shape_car_tex_007.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 268,
+      "style_pos": 494
+    },
+    {
+      "filename": "truck_shape_car_tex_008.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 84,
+      "style_pos": 178
+    },
+    {
+      "filename": "truck_shape_car_tex_009.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 96,
+      "style_pos": 244
+    },
+    {
+      "filename": "truck_shape_car_tex_010.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 221,
+      "style_pos": 311
+    },
+    {
+      "filename": "truck_shape_car_tex_011.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 365,
+      "style_pos": 14
+    },
+    {
+      "filename": "truck_shape_car_tex_012.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 147,
+      "style_pos": 487
+    },
+    {
+      "filename": "truck_shape_car_tex_013.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 159,
+      "style_pos": 177
+    },
+    {
+      "filename": "truck_shape_car_tex_014.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 240,
+      "style_pos": 251
+    },
+    {
+      "filename": "truck_shape_car_tex_015.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 44,
+      "style_pos": 239
+    },
+    {
+      "filename": "truck_shape_car_tex_016.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 90,
+      "style_pos": 145
+    },
+    {
+      "filename": "truck_shape_car_tex_017.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 498,
+      "style_pos": 288
+    },
+    {
+      "filename": "truck_shape_car_tex_018.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 111,
+      "style_pos": 162
+    },
+    {
+      "filename": "truck_shape_car_tex_019.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 230,
+      "style_pos": 55
+    },
+    {
+      "filename": "truck_shape_car_tex_020.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 426,
+      "style_pos": 128
+    },
+    {
+      "filename": "truck_shape_car_tex_021.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 429,
+      "style_pos": 243
+    },
+    {
+      "filename": "truck_shape_car_tex_022.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 59,
+      "style_pos": 74
+    },
+    {
+      "filename": "truck_shape_car_tex_023.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 387,
+      "style_pos": 406
+    },
+    {
+      "filename": "truck_shape_car_tex_024.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 205,
+      "style_pos": 225
+    },
+    {
+      "filename": "truck_shape_car_tex_025.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 385,
+      "style_pos": 124
+    },
+    {
+      "filename": "truck_shape_car_tex_026.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 231,
+      "style_pos": 173
+    },
+    {
+      "filename": "truck_shape_car_tex_027.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 53,
+      "style_pos": 473
+    },
+    {
+      "filename": "truck_shape_car_tex_028.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 25,
+      "style_pos": 361
+    },
+    {
+      "filename": "truck_shape_car_tex_029.png",
+      "content_label": 9,
+      "style_label": 2,
+      "content_pos": 131,
+      "style_pos": 334
+    },
+    {
+      "filename": "cat_shape_dog_tex_000.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 408,
+      "style_pos": 407
+    },
+    {
+      "filename": "cat_shape_dog_tex_001.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 496,
+      "style_pos": 226
+    },
+    {
+      "filename": "cat_shape_dog_tex_002.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 171,
+      "style_pos": 85
+    },
+    {
+      "filename": "cat_shape_dog_tex_003.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 134,
+      "style_pos": 211
+    },
+    {
+      "filename": "cat_shape_dog_tex_004.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 51,
+      "style_pos": 69
+    },
+    {
+      "filename": "cat_shape_dog_tex_005.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 115,
+      "style_pos": 229
+    },
+    {
+      "filename": "cat_shape_dog_tex_006.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 163,
+      "style_pos": 309
+    },
+    {
+      "filename": "cat_shape_dog_tex_007.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 217,
+      "style_pos": 455
+    },
+    {
+      "filename": "cat_shape_dog_tex_008.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 61,
+      "style_pos": 68
+    },
+    {
+      "filename": "cat_shape_dog_tex_009.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 169,
+      "style_pos": 112
+    },
+    {
+      "filename": "cat_shape_dog_tex_010.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 150,
+      "style_pos": 78
+    },
+    {
+      "filename": "cat_shape_dog_tex_011.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 32,
+      "style_pos": 26
+    },
+    {
+      "filename": "cat_shape_dog_tex_012.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 362,
+      "style_pos": 320
+    },
+    {
+      "filename": "cat_shape_dog_tex_013.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 383,
+      "style_pos": 224
+    },
+    {
+      "filename": "cat_shape_dog_tex_014.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 336,
+      "style_pos": 467
+    },
+    {
+      "filename": "cat_shape_dog_tex_015.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 270,
+      "style_pos": 52
+    },
+    {
+      "filename": "cat_shape_dog_tex_016.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 295,
+      "style_pos": 466
+    },
+    {
+      "filename": "cat_shape_dog_tex_017.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 113,
+      "style_pos": 448
+    },
+    {
+      "filename": "cat_shape_dog_tex_018.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 141,
+      "style_pos": 476
+    },
+    {
+      "filename": "cat_shape_dog_tex_019.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 189,
+      "style_pos": 497
+    },
+    {
+      "filename": "cat_shape_dog_tex_020.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 132,
+      "style_pos": 0
+    },
+    {
+      "filename": "cat_shape_dog_tex_021.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 323,
+      "style_pos": 461
+    },
+    {
+      "filename": "cat_shape_dog_tex_022.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 73,
+      "style_pos": 50
+    },
+    {
+      "filename": "cat_shape_dog_tex_023.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 428,
+      "style_pos": 469
+    },
+    {
+      "filename": "cat_shape_dog_tex_024.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 445,
+      "style_pos": 30
+    },
+    {
+      "filename": "cat_shape_dog_tex_025.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 369,
+      "style_pos": 174
+    },
+    {
+      "filename": "cat_shape_dog_tex_026.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 418,
+      "style_pos": 382
+    },
+    {
+      "filename": "cat_shape_dog_tex_027.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 227,
+      "style_pos": 396
+    },
+    {
+      "filename": "cat_shape_dog_tex_028.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 447,
+      "style_pos": 130
+    },
+    {
+      "filename": "cat_shape_dog_tex_029.png",
+      "content_label": 3,
+      "style_label": 5,
+      "content_pos": 197,
+      "style_pos": 474
+    },
+    {
+      "filename": "dog_shape_cat_tex_000.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 455,
+      "style_pos": 270
+    },
+    {
+      "filename": "dog_shape_cat_tex_001.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 232,
+      "style_pos": 408
+    },
+    {
+      "filename": "dog_shape_cat_tex_002.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 228,
+      "style_pos": 47
+    },
+    {
+      "filename": "dog_shape_cat_tex_003.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 48,
+      "style_pos": 410
+    },
+    {
+      "filename": "dog_shape_cat_tex_004.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 309,
+      "style_pos": 51
+    },
+    {
+      "filename": "dog_shape_cat_tex_005.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 42,
+      "style_pos": 472
+    },
+    {
+      "filename": "dog_shape_cat_tex_006.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 166,
+      "style_pos": 269
+    },
+    {
+      "filename": "dog_shape_cat_tex_007.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 461,
+      "style_pos": 134
+    },
+    {
+      "filename": "dog_shape_cat_tex_008.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 474,
+      "style_pos": 391
+    },
+    {
+      "filename": "dog_shape_cat_tex_009.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 69,
+      "style_pos": 2
+    },
+    {
+      "filename": "dog_shape_cat_tex_010.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 26,
+      "style_pos": 227
+    },
+    {
+      "filename": "dog_shape_cat_tex_011.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 224,
+      "style_pos": 496
+    },
+    {
+      "filename": "dog_shape_cat_tex_012.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 316,
+      "style_pos": 242
+    },
+    {
+      "filename": "dog_shape_cat_tex_013.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 396,
+      "style_pos": 419
+    },
+    {
+      "filename": "dog_shape_cat_tex_014.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 105,
+      "style_pos": 447
+    },
+    {
+      "filename": "dog_shape_cat_tex_015.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 58,
+      "style_pos": 141
+    },
+    {
+      "filename": "dog_shape_cat_tex_016.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 226,
+      "style_pos": 295
+    },
+    {
+      "filename": "dog_shape_cat_tex_017.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 439,
+      "style_pos": 422
+    },
+    {
+      "filename": "dog_shape_cat_tex_018.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 176,
+      "style_pos": 95
+    },
+    {
+      "filename": "dog_shape_cat_tex_019.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 142,
+      "style_pos": 171
+    },
+    {
+      "filename": "dog_shape_cat_tex_020.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 174,
+      "style_pos": 428
+    },
+    {
+      "filename": "dog_shape_cat_tex_021.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 121,
+      "style_pos": 445
+    },
+    {
+      "filename": "dog_shape_cat_tex_022.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 112,
+      "style_pos": 113
+    },
+    {
+      "filename": "dog_shape_cat_tex_023.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 424,
+      "style_pos": 32
+    },
+    {
+      "filename": "dog_shape_cat_tex_024.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 476,
+      "style_pos": 468
+    },
+    {
+      "filename": "dog_shape_cat_tex_025.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 460,
+      "style_pos": 217
+    },
+    {
+      "filename": "dog_shape_cat_tex_026.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 497,
+      "style_pos": 82
+    },
+    {
+      "filename": "dog_shape_cat_tex_027.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 130,
+      "style_pos": 323
+    },
+    {
+      "filename": "dog_shape_cat_tex_028.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 358,
+      "style_pos": 353
+    },
+    {
+      "filename": "dog_shape_cat_tex_029.png",
+      "content_label": 5,
+      "style_label": 3,
+      "content_pos": 85,
+      "style_pos": 383
+    },
+    {
+      "filename": "deer_shape_horse_tex_000.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 1,
+      "style_pos": 119
+    },
+    {
+      "filename": "deer_shape_horse_tex_001.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 457,
+      "style_pos": 22
+    },
+    {
+      "filename": "deer_shape_horse_tex_002.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 438,
+      "style_pos": 37
+    },
+    {
+      "filename": "deer_shape_horse_tex_003.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 76,
+      "style_pos": 155
+    },
+    {
+      "filename": "deer_shape_horse_tex_004.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 10,
+      "style_pos": 12
+    },
+    {
+      "filename": "deer_shape_horse_tex_005.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 283,
+      "style_pos": 405
+    },
+    {
+      "filename": "deer_shape_horse_tex_006.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 337,
+      "style_pos": 236
+    },
+    {
+      "filename": "deer_shape_horse_tex_007.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 133,
+      "style_pos": 312
+    },
+    {
+      "filename": "deer_shape_horse_tex_008.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 193,
+      "style_pos": 125
+    },
+    {
+      "filename": "deer_shape_horse_tex_009.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 367,
+      "style_pos": 107
+    },
+    {
+      "filename": "deer_shape_horse_tex_010.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 480,
+      "style_pos": 259
+    },
+    {
+      "filename": "deer_shape_horse_tex_011.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 106,
+      "style_pos": 170
+    },
+    {
+      "filename": "deer_shape_horse_tex_012.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 66,
+      "style_pos": 267
+    },
+    {
+      "filename": "deer_shape_horse_tex_013.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 151,
+      "style_pos": 100
+    },
+    {
+      "filename": "deer_shape_horse_tex_014.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 72,
+      "style_pos": 164
+    },
+    {
+      "filename": "deer_shape_horse_tex_015.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 238,
+      "style_pos": 91
+    },
+    {
+      "filename": "deer_shape_horse_tex_016.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 258,
+      "style_pos": 81
+    },
+    {
+      "filename": "deer_shape_horse_tex_017.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 218,
+      "style_pos": 56
+    },
+    {
+      "filename": "deer_shape_horse_tex_018.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 435,
+      "style_pos": 379
+    },
+    {
+      "filename": "deer_shape_horse_tex_019.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 479,
+      "style_pos": 188
+    },
+    {
+      "filename": "deer_shape_horse_tex_020.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 393,
+      "style_pos": 63
+    },
+    {
+      "filename": "deer_shape_horse_tex_021.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 452,
+      "style_pos": 298
+    },
+    {
+      "filename": "deer_shape_horse_tex_022.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 28,
+      "style_pos": 368
+    },
+    {
+      "filename": "deer_shape_horse_tex_023.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 303,
+      "style_pos": 187
+    },
+    {
+      "filename": "deer_shape_horse_tex_024.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 67,
+      "style_pos": 427
+    },
+    {
+      "filename": "deer_shape_horse_tex_025.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 54,
+      "style_pos": 296
+    },
+    {
+      "filename": "deer_shape_horse_tex_026.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 161,
+      "style_pos": 339
+    },
+    {
+      "filename": "deer_shape_horse_tex_027.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 282,
+      "style_pos": 41
+    },
+    {
+      "filename": "deer_shape_horse_tex_028.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 209,
+      "style_pos": 302
+    },
+    {
+      "filename": "deer_shape_horse_tex_029.png",
+      "content_label": 4,
+      "style_label": 6,
+      "content_pos": 403,
+      "style_pos": 19
+    },
+    {
+      "filename": "horse_shape_deer_tex_000.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 451,
+      "style_pos": 457
+    },
+    {
+      "filename": "horse_shape_deer_tex_001.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 277,
+      "style_pos": 332
+    },
+    {
+      "filename": "horse_shape_deer_tex_002.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 117,
+      "style_pos": 45
+    },
+    {
+      "filename": "horse_shape_deer_tex_003.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 41,
+      "style_pos": 417
+    },
+    {
+      "filename": "horse_shape_deer_tex_004.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 375,
+      "style_pos": 216
+    },
+    {
+      "filename": "horse_shape_deer_tex_005.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 305,
+      "style_pos": 304
+    },
+    {
+      "filename": "horse_shape_deer_tex_006.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 167,
+      "style_pos": 462
+    },
+    {
+      "filename": "horse_shape_deer_tex_007.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 100,
+      "style_pos": 54
+    },
+    {
+      "filename": "horse_shape_deer_tex_008.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 329,
+      "style_pos": 1
+    },
+    {
+      "filename": "horse_shape_deer_tex_009.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 7,
+      "style_pos": 161
+    },
+    {
+      "filename": "horse_shape_deer_tex_010.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 427,
+      "style_pos": 80
+    },
+    {
+      "filename": "horse_shape_deer_tex_011.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 63,
+      "style_pos": 122
+    },
+    {
+      "filename": "horse_shape_deer_tex_012.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 12,
+      "style_pos": 66
+    },
+    {
+      "filename": "horse_shape_deer_tex_013.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 405,
+      "style_pos": 76
+    },
+    {
+      "filename": "horse_shape_deer_tex_014.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 15,
+      "style_pos": 252
+    },
+    {
+      "filename": "horse_shape_deer_tex_015.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 296,
+      "style_pos": 471
+    },
+    {
+      "filename": "horse_shape_deer_tex_016.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 368,
+      "style_pos": 106
+    },
+    {
+      "filename": "horse_shape_deer_tex_017.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 91,
+      "style_pos": 367
+    },
+    {
+      "filename": "horse_shape_deer_tex_018.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 170,
+      "style_pos": 258
+    },
+    {
+      "filename": "horse_shape_deer_tex_019.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 236,
+      "style_pos": 343
+    },
+    {
+      "filename": "horse_shape_deer_tex_020.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 430,
+      "style_pos": 479
+    },
+    {
+      "filename": "horse_shape_deer_tex_021.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 257,
+      "style_pos": 10
+    },
+    {
+      "filename": "horse_shape_deer_tex_022.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 19,
+      "style_pos": 337
+    },
+    {
+      "filename": "horse_shape_deer_tex_023.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 298,
+      "style_pos": 354
+    },
+    {
+      "filename": "horse_shape_deer_tex_024.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 198,
+      "style_pos": 338
+    },
+    {
+      "filename": "horse_shape_deer_tex_025.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 81,
+      "style_pos": 195
+    },
+    {
+      "filename": "horse_shape_deer_tex_026.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 267,
+      "style_pos": 218
+    },
+    {
+      "filename": "horse_shape_deer_tex_027.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 98,
+      "style_pos": 303
+    },
+    {
+      "filename": "horse_shape_deer_tex_028.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 187,
+      "style_pos": 490
+    },
+    {
+      "filename": "horse_shape_deer_tex_029.png",
+      "content_label": 6,
+      "style_label": 4,
+      "content_pos": 339,
+      "style_pos": 435
+    },
+    {
+      "filename": "monkey_shape_ship_tex_000.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 463,
+      "style_pos": 8
+    },
+    {
+      "filename": "monkey_shape_ship_tex_001.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 194,
+      "style_pos": 400
+    },
+    {
+      "filename": "monkey_shape_ship_tex_002.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 184,
+      "style_pos": 482
+    },
+    {
+      "filename": "monkey_shape_ship_tex_003.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 120,
+      "style_pos": 289
+    },
+    {
+      "filename": "monkey_shape_ship_tex_004.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 444,
+      "style_pos": 344
+    },
+    {
+      "filename": "monkey_shape_ship_tex_005.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 437,
+      "style_pos": 152
+    },
+    {
+      "filename": "monkey_shape_ship_tex_006.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 116,
+      "style_pos": 459
+    },
+    {
+      "filename": "monkey_shape_ship_tex_007.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 326,
+      "style_pos": 488
+    },
+    {
+      "filename": "monkey_shape_ship_tex_008.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 65,
+      "style_pos": 271
+    },
+    {
+      "filename": "monkey_shape_ship_tex_009.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 381,
+      "style_pos": 357
+    },
+    {
+      "filename": "monkey_shape_ship_tex_010.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 249,
+      "style_pos": 287
+    },
+    {
+      "filename": "monkey_shape_ship_tex_011.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 477,
+      "style_pos": 279
+    },
+    {
+      "filename": "monkey_shape_ship_tex_012.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 470,
+      "style_pos": 360
+    },
+    {
+      "filename": "monkey_shape_ship_tex_013.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 446,
+      "style_pos": 237
+    },
+    {
+      "filename": "monkey_shape_ship_tex_014.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 386,
+      "style_pos": 156
+    },
+    {
+      "filename": "monkey_shape_ship_tex_015.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 300,
+      "style_pos": 414
+    },
+    {
+      "filename": "monkey_shape_ship_tex_016.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 310,
+      "style_pos": 16
+    },
+    {
+      "filename": "monkey_shape_ship_tex_017.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 291,
+      "style_pos": 352
+    },
+    {
+      "filename": "monkey_shape_ship_tex_018.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 285,
+      "style_pos": 454
+    },
+    {
+      "filename": "monkey_shape_ship_tex_019.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 146,
+      "style_pos": 397
+    },
+    {
+      "filename": "monkey_shape_ship_tex_020.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 280,
+      "style_pos": 204
+    },
+    {
+      "filename": "monkey_shape_ship_tex_021.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 241,
+      "style_pos": 456
+    },
+    {
+      "filename": "monkey_shape_ship_tex_022.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 276,
+      "style_pos": 272
+    },
+    {
+      "filename": "monkey_shape_ship_tex_023.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 99,
+      "style_pos": 464
+    },
+    {
+      "filename": "monkey_shape_ship_tex_024.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 327,
+      "style_pos": 71
+    },
+    {
+      "filename": "monkey_shape_ship_tex_025.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 186,
+      "style_pos": 13
+    },
+    {
+      "filename": "monkey_shape_ship_tex_026.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 108,
+      "style_pos": 319
+    },
+    {
+      "filename": "monkey_shape_ship_tex_027.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 392,
+      "style_pos": 191
+    },
+    {
+      "filename": "monkey_shape_ship_tex_028.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 478,
+      "style_pos": 83
+    },
+    {
+      "filename": "monkey_shape_ship_tex_029.png",
+      "content_label": 7,
+      "style_label": 8,
+      "content_pos": 388,
+      "style_pos": 94
+    },
+    {
+      "filename": "ship_shape_monkey_tex_000.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 374,
+      "style_pos": 62
+    },
+    {
+      "filename": "ship_shape_monkey_tex_001.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 16,
+      "style_pos": 186
+    },
+    {
+      "filename": "ship_shape_monkey_tex_002.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 109,
+      "style_pos": 463
+    },
+    {
+      "filename": "ship_shape_monkey_tex_003.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 492,
+      "style_pos": 389
+    },
+    {
+      "filename": "ship_shape_monkey_tex_004.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 482,
+      "style_pos": 437
+    },
+    {
+      "filename": "ship_shape_monkey_tex_005.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 87,
+      "style_pos": 60
+    },
+    {
+      "filename": "ship_shape_monkey_tex_006.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 360,
+      "style_pos": 413
+    },
+    {
+      "filename": "ship_shape_monkey_tex_007.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 156,
+      "style_pos": 35
+    },
+    {
+      "filename": "ship_shape_monkey_tex_008.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 376,
+      "style_pos": 194
+    },
+    {
+      "filename": "ship_shape_monkey_tex_009.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 399,
+      "style_pos": 388
+    },
+    {
+      "filename": "ship_shape_monkey_tex_010.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 454,
+      "style_pos": 201
+    },
+    {
+      "filename": "ship_shape_monkey_tex_011.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 319,
+      "style_pos": 300
+    },
+    {
+      "filename": "ship_shape_monkey_tex_012.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 491,
+      "style_pos": 184
+    },
+    {
+      "filename": "ship_shape_monkey_tex_013.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 400,
+      "style_pos": 116
+    },
+    {
+      "filename": "ship_shape_monkey_tex_014.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 289,
+      "style_pos": 143
+    },
+    {
+      "filename": "ship_shape_monkey_tex_015.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 352,
+      "style_pos": 175
+    },
+    {
+      "filename": "ship_shape_monkey_tex_016.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 152,
+      "style_pos": 470
+    },
+    {
+      "filename": "ship_shape_monkey_tex_017.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 183,
+      "style_pos": 446
+    },
+    {
+      "filename": "ship_shape_monkey_tex_018.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 20,
+      "style_pos": 381
+    },
+    {
+      "filename": "ship_shape_monkey_tex_019.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 135,
+      "style_pos": 299
+    },
+    {
+      "filename": "ship_shape_monkey_tex_020.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 483,
+      "style_pos": 249
+    },
+    {
+      "filename": "ship_shape_monkey_tex_021.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 215,
+      "style_pos": 24
+    },
+    {
+      "filename": "ship_shape_monkey_tex_022.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 234,
+      "style_pos": 34
+    },
+    {
+      "filename": "ship_shape_monkey_tex_023.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 456,
+      "style_pos": 65
+    },
+    {
+      "filename": "ship_shape_monkey_tex_024.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 40,
+      "style_pos": 79
+    },
+    {
+      "filename": "ship_shape_monkey_tex_025.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 287,
+      "style_pos": 335
+    },
+    {
+      "filename": "ship_shape_monkey_tex_026.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 94,
+      "style_pos": 280
+    },
+    {
+      "filename": "ship_shape_monkey_tex_027.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 459,
+      "style_pos": 200
+    },
+    {
+      "filename": "ship_shape_monkey_tex_028.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 83,
+      "style_pos": 77
+    },
+    {
+      "filename": "ship_shape_monkey_tex_029.png",
+      "content_label": 8,
+      "style_label": 7,
+      "content_pos": 464,
+      "style_pos": 411
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+,grayscale,hue_rotation,patch_shuffle,cue_conflict,translate_8,translate_16,translate_32
+resnet,0.797,0.81,0.695,0.376,0.967,0.951,0.931
+vit,0.732,0.684,0.628,0.416,0.945,0.976,0.944
+clip,0.879,0.878,0.752,0.743,0.978,0.964,0.967

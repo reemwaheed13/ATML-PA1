@@ -1,0 +1,4 @@
+,n_shape,n_texture,n_other,shape_bias,coverage
+resnet,187.0,57.0,56.0,76.64,81.33
+vit,245.0,23.0,32.0,91.42,89.33
+clip,237.0,12.0,51.0,95.18,83.0
