@@ -1,0 +1,27 @@
+# Shared PACS UDA settings (manual Task 2). Method configs extend this file.
+seed: 6304
+num_classes: 7
+
+# Data
+split_path: shared/splits/pacs_sketch_seed6304.json
+source_domains: [photo, art_painting, cartoon]
+target_domain: sketch
+pacs_root: null            # falls back to --pacs_root, then env PACS_ROOT
+num_workers: 2
+
+# Batching (manual): 8 examples per source domain (= 24 source) + 24 target.
+batch_per_source: 8
+batch_target: 24
+
+# Optimisation (manual): AdamW, lr 1e-4, wd 1e-4, <=30 source epochs,
+# early stop after 5 epochs without improvement in MEAN source-val macro-F1.
+lr: 1.0e-4
+weight_decay: 1.0e-4
+max_epochs: 30
+patience: 5
+
+# Definitions the manual leaves to us (documented here, reported in chat):
+#  * one epoch  = one pass over the source training images
+#                 iters_per_epoch = ceil(N_source_train / (batch_per_source * 3))
+#                 i.e. ceil(N_source_train / 24), each update consumes 24 source images.
+#  * progress p = global_iter / (max_epochs * iters_per_epoch), used by DANN/CDAN alpha(p).

@@ -22,6 +22,9 @@ class DANN(BaseMethod):
         alpha = grl_alpha(progress, max_lambda=self.max_lambda)
         f = torch.cat([fs, ft], 0)
         d_out = self.discriminator(grad_reverse(f, alpha))
-        dloss = F.cross_entropy(d_out, domain_labels(len(fs), len(ft), f.device))
+        d_lab = domain_labels(len(fs), len(ft), f.device)
+        dloss = F.cross_entropy(d_out, d_lab)
         loss = cls + dloss
-        return loss, {'cls': cls.item(), 'domain': dloss.item(), 'alpha': alpha}
+        disc_acc = (d_out.argmax(1) == d_lab).float().mean().item()
+        return loss, {'cls': cls.item(), 'domain': dloss.item(),
+                      'alpha': alpha, 'disc_acc': disc_acc}

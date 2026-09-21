@@ -1,0 +1,5 @@
+# Controlled design study: DAN with lambda_mmd = 10 (strong alignment). All else identical.
+run: dan_lambda10
+method: dan
+uses_target: true
+lambda_mmd: 10.0

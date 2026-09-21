@@ -1,0 +1,5 @@
+# Controlled design study: DAN with lambda_mmd = 0.1 (weak alignment). All else identical.
+run: dan_lambda0.1
+method: dan
+uses_target: true
+lambda_mmd: 0.1

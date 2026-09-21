@@ -1,0 +1,6 @@
+# CDAN - class-conditional adversarial alignment. Discriminator input = vec(f (x) p),
+# 512*7 = 3584-d. Same hidden width / dropout / GRL schedule / loss weight as DANN.
+run: cdan
+method: cdan
+uses_target: true
+max_lambda: 1.0

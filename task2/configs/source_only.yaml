@@ -1,0 +1,4 @@
+# Source-only ERM. Does NOT load Sketch. Reused unchanged as the Task 3 ERM baseline.
+run: source_only
+method: source_only
+uses_target: false

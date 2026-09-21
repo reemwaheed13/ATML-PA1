@@ -1,0 +1,6 @@
+# DAN - MMD alignment on the 512-d feature. Main comparison (lambda_mmd = 1) and the
+# middle point of the controlled design study.
+run: dan
+method: dan
+uses_target: true
+lambda_mmd: 1.0
