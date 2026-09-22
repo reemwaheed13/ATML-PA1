@@ -25,9 +25,9 @@ def _load_task2(path):
 # named columns and must NOT be read as the same axis. Only Sketch acc/F1 and the per-class
 # Sketch deltas are like-for-like (same frozen Sketch eval set, same class order).
 def write_comparison(task3_summary,
-                     task2_path='results/task2_final.json',
-                     out_csv='results/task3_vs_task2.csv',
-                     out_perclass='results/task3_vs_task2_perclass.csv',
+                     task2_path='results/task2/task2_final.json',
+                     out_csv='results/task3/task3_vs_task2.csv',
+                     out_perclass='results/task3/task3_vs_task2_perclass.csv',
                      out_fig='report/figures/task3_vs_task2.png'):
     t2 = _load_task2(task2_path)
     if t2 is None:

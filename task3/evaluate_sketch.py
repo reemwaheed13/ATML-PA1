@@ -99,10 +99,19 @@ def evaluate_run(model, src_val_loaders, sharp_batch, tgt_loader, device, num_cl
     }
 
 
+# Results are organized per task (commit ffed9d1): canonical Task 2 final lives at
+# results/task2/task2_final.json; the flat path is kept only as a fallback.
+def task2_final_path():
+    for p in ('results/task2/task2_final.json', 'results/task2_final.json'):
+        if os.path.exists(p):
+            return p
+    return 'results/task2/task2_final.json'
+
+
 # The Task 3 ERM Sketch row is the SAME frozen checkpoint as Task 2 source_only, so its
-# target numbers must match results/task2_final.json (a silent-regression tripwire).
+# target numbers must match Task 2's source_only row (a silent-regression tripwire).
 def check_erm_consistency(erm_result):
-    ref_path = 'results/task2_final.json'
+    ref_path = task2_final_path()
     if not os.path.exists(ref_path):
         return {'checked': False, 'reason': f'{ref_path} not found'}
     with open(ref_path) as f:
@@ -204,7 +213,7 @@ def main():
     ap.add_argument('--pacs_root', default=None)
     ap.add_argument('--ckpt_dir', default=os.environ.get('CKPT_DIR', 'checkpoints'))
     ap.add_argument('--split_path', default='shared/splits/pacs_sketch_seed6304.json')
-    ap.add_argument('--out', default='results/task3_final.json')
+    ap.add_argument('--out', default='results/task3/task3_final.json')
     args = ap.parse_args()
 
     if not args.confirm_frozen:
@@ -303,7 +312,7 @@ def main():
         json.dump(summary, f, indent=2)
     print(f"[json] -> {args.out}")
 
-    with open('results/task3_summary.csv', 'w', newline='') as f:
+    with open('results/task3/task3_summary.csv', 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['method']
                    + [f'src_{d}_f1' for d in SOURCE_DOMAINS]
@@ -327,7 +336,7 @@ def main():
                           m['source_separability'],
                           m['sharpness']['delta_sharpness']])
 
-    with open('results/task3_design_study.csv', 'w', newline='') as f:
+    with open('results/task3/task3_design_study.csv', 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['run', 'lambda_dg', 'mean_src_f1', 'worst_src_f1',
                     'source_separability', 'delta_sharpness', 'target_acc'])
@@ -344,7 +353,7 @@ def main():
         summary, os.path.join('report', 'figures', 'task3_design_study.png'))
     write_sharpness_bar(
         summary, os.path.join('report', 'figures', 'task3_sharpness.png'))
-    write_comparison(summary)
+    write_comparison(summary, task2_path=task2_final_path())
     print("done.")
 
 
