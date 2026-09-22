@@ -14,12 +14,10 @@ def macro_f1(logits, labels):
 
 
 def mean_max_confidence(logits):
-    # softmax then take the highest class prob per image, average across images
     exp = np.exp(logits - logits.max(axis=1, keepdims=True))
     probs = exp / exp.sum(axis=1, keepdims=True)
     return probs.max(axis=1).mean()
 
 
 def prediction_consistency(preds_clean, preds_transformed):
-    # fraction of images where prediction didnt change after transformation
     return (preds_clean == preds_transformed).mean()

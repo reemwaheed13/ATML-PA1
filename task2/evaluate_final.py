@@ -49,7 +49,6 @@ def load_run(run, ckpt_dir, device):
 
 
 def evaluate_run(model, src_val_loaders, tgt_loader, device, num_classes):
-    # Source-validation: per-domain accuracy / macro-F1 + pooled features.
     per_domain, src_feats = {}, []
     for d, loader in src_val_loaders.items():
         f, logits, labels = extract(model, loader, device)
@@ -60,7 +59,6 @@ def evaluate_run(model, src_val_loaders, tgt_loader, device, num_classes):
     mean_src_acc = float(np.mean([per_domain[d]['acc'] for d in SOURCE_DOMAINS]))
     mean_src_f1 = float(np.mean([per_domain[d]['f1'] for d in SOURCE_DOMAINS]))
 
-    # Target (Sketch): the only place labels are used.
     tgt_feats, tgt_logits, tgt_labels = extract(model, tgt_loader, device)
     tgt_preds = tgt_logits.argmax(1)
     sep = domain_separability(src_feats, tgt_feats, seed=SEED)
@@ -117,7 +115,7 @@ def write_separability_scatter(summary, out_path):
         ax.scatter(m['separability'], m['target_acc'])
         ax.annotate(run, (m['separability'], m['target_acc']),
                     textcoords='offset points', xytext=(5, 5))
-    ax.axvline(0.5, ls='--', color='gray', lw=1)  # chance separability
+    ax.axvline(0.5, ls='--', color='gray', lw=1)
     ax.set(title='Domain separability vs target accuracy',
            xlabel='domain separability (0.5 = chance)',
            ylabel='target (Sketch) accuracy')
@@ -202,7 +200,6 @@ def main():
         raise SystemExit("source_only checkpoint missing; it is the reference baseline.")
     base = results['source_only']
 
-    # ---- Assemble the reportable summary (manual 'Required Evidence') ----
     summary = {'classes': PACS_CLASSES, 'methods': {}, 'design_study': {}}
     for run in MAIN_RUNS:
         if run not in results:
@@ -243,7 +240,6 @@ def main():
         json.dump(summary, f, indent=2)
     print(f"[json] -> {args.out}")
 
-    # ---- Small CSVs for the report ----
     with open('results/task2_summary.csv', 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['method'] + [f'src_{d}_f1' for d in SOURCE_DOMAINS]

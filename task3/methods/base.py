@@ -17,5 +17,4 @@ class DGMethod(BaseMethod):
         return info
 
     def self_check(self, xs, ys, make_opt, max_grad_norm=None):
-        # No-op. Methods with a step-0 invariant to verify (e.g. SAM) override this.
         pass

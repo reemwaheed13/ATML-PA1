@@ -97,7 +97,6 @@ def train(cfg, cli_root, resume):
     }
     src_iters = {d: infinite(src_train_loaders[d]) for d in SOURCE_DOMAINS}
 
-    # One epoch = one pass over the source training images (24 per update).
     n_src_train = sum(len(srcs[d]['train']) for d in SOURCE_DOMAINS)
     iters_per_epoch = math.ceil(
         n_src_train / (cfg['batch_per_source'] * len(SOURCE_DOMAINS)))
@@ -140,29 +139,27 @@ def train(cfg, cli_root, resume):
         bad, global_iter = state['bad'], state['global_iter']
         resumed = True
         print(f"[resume] continuing from epoch {start_epoch} (best_f1={best_f1:.4f})")
-    # Fresh run truncates any old log; a resume keeps its log but re-writes the
-    # header if the file was lost (e.g. re-cloned Colab session, checkpoint on Drive).
     if not resumed or not os.path.exists(log_path):
         with open(log_path, 'w', newline='') as f:
             csv.writer(f).writerow(fields)
 
     for epoch in range(start_epoch, cfg['max_epochs']):
-        model.train()  # backbone re-freezes BatchNorm here (see ResNet18Backbone.train)
+        model.train()
         cls_sum = align_sum = disc_sum = 0.0
         for _ in range(iters_per_epoch):
             progress = global_iter / max(total_iters, 1)
 
             xs_parts, ys_parts = [], []
             for d in SOURCE_DOMAINS:
-                x, y = next(src_iters[d])          # 8 images from this source domain
+                x, y = next(src_iters[d])
                 xs_parts.append(x)
                 ys_parts.append(y)
-            xs = torch.cat(xs_parts).to(device)     # 24 source images
+            xs = torch.cat(xs_parts).to(device)
             ys = torch.cat(ys_parts).to(device)
 
             xt = None
             if cfg['uses_target']:
-                xt = next(target_iter)[0].to(device)  # 24 unlabelled target images
+                xt = next(target_iter)[0].to(device)
 
             loss, info = model.compute_loss(xs, ys, xt, progress)
             opt.zero_grad()

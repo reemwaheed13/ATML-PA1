@@ -27,9 +27,9 @@ def probe(model, xs, xt):
     max_logit = float('nan')
     if hasattr(model, 'discriminator'):
         in_dim = model.discriminator.net[0].in_features
-        if in_dim == f.shape[1]:                       # DANN: raw features
+        if in_dim == f.shape[1]:
             d_in = f
-        else:                                          # CDAN: vec(f (x) p)
+        else:
             p = torch.softmax(model.head(f), dim=1)
             d_in = torch.bmm(f.unsqueeze(2), p.unsqueeze(1)).flatten(1)
         max_logit = model.discriminator(d_in).abs().max().item()
@@ -54,7 +54,6 @@ def main():
     gen = torch.Generator()
     gen.manual_seed(cfg['seed'])
 
-    # Same loaders / batching as train.py.
     src_iters = {
         d: infinite(DataLoader(srcs[d]['train'], batch_size=cfg['batch_per_source'],
                                shuffle=True, drop_last=True,
@@ -79,7 +78,7 @@ def main():
           f"total_iters={total_iters}  (epoch 1 covers iters 0..{iters_per_epoch-1})")
     print("iter    p       alpha    cls        domain        feat_L2   max|dlogit|   bb_grad")
 
-    model.train()  # backbone re-freezes BatchNorm, exactly as train.py
+    model.train()
     for it in range(args.iters):
         progress = it / max(total_iters, 1)
 
@@ -95,7 +94,6 @@ def main():
         loss, info = model.compute_loss(xs, ys, xt, progress)
         opt.zero_grad()
         loss.backward()
-        # Clip exactly as train.py does, so the probe reflects the real run.
         if cfg.get('max_grad_norm'):
             torch.nn.utils.clip_grad_norm_(model.parameters(), cfg['max_grad_norm'])
         gnorm = backbone_grad_norm(model)

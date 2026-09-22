@@ -22,7 +22,6 @@ class SAM(DGMethod):
 
     @torch.no_grad()
     def _grad_norm(self):
-        # global L2 over all trainable grads, not per-parameter.
         return torch.norm(torch.stack(
             [p.grad.norm(2) for p in self.parameters() if p.grad is not None]), 2)
 
@@ -34,41 +33,35 @@ class SAM(DGMethod):
             if p.grad is None:
                 continue
             e = p.grad * scale
-            p.add_(e)                      # in-place: same tensor, Adam state keyed by it survives
+            p.add_(e)
             eps[p] = e
         return eps
 
     @torch.no_grad()
     def _restore(self, eps):
         for p, e in eps.items():
-            p.sub_(e)                      # back to theta; never reload state_dict / rebuild opt
+            p.sub_(e)
 
     def optimize(self, xs, ys, opt, progress=0.0, max_grad_norm=None):
         assert_bn_frozen(self)
-        loss, info = self.loss(xs, ys, progress)   # true objective at theta -> reported
+        loss, info = self.loss(xs, ys, progress)
         opt.zero_grad()
         loss.backward()
-        eps = self._ascent()                       # theta -> theta + rho * g/||g||
-        opt.zero_grad()                            # drop ascent grad so pass 2 is clean g'
+        eps = self._ascent()
+        opt.zero_grad()
 
         assert_bn_frozen(self)
-        loss2, _ = self.loss(xs, ys, progress)     # loss at theta + eps
+        loss2, _ = self.loss(xs, ys, progress)
         loss2.backward()
-        self._restore(eps)                         # theta restored; step() acts from theta
+        self._restore(eps)
         if max_grad_norm:
             torch.nn.utils.clip_grad_norm_(self.parameters(), max_grad_norm)
-        opt.step()                                 # AdamW update at theta using grad @ theta+eps
+        opt.step()
         return info
 
     def self_check(self, xs, ys, make_opt, max_grad_norm=None):
-        # Step-0 invariant: rho=0 must reduce to plain AdamW, so a rho=0.05 step and a
-        # rho=0 step from the SAME weights on the SAME batch must move the parameters
-        # differently. Equal updates mean the ascent perturbation is a silent no-op
-        # (the SAM-restore or global-grad-norm trap). make_opt builds the throwaway
-        # optimizer from the SAME lr/wd as the real one, so the deltas are representative.
-        # Runs on deepcopies -> the live model, optimizer moments, and RNG are untouched.
         def step_delta(rho):
-            m = copy.deepcopy(self)                 # inherits frozen-BN eval state of self
+            m = copy.deepcopy(self)
             m.rho = rho
             before = [p.detach().clone() for p in m.parameters()]
             m.optimize(xs, ys, make_opt(m.parameters()), max_grad_norm=max_grad_norm)

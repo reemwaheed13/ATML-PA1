@@ -24,7 +24,7 @@ def main():
 
     root = resolve_root(cfg, args.pacs_root)
     splits = load_splits(args.split_path)
-    srcs = source_datasets(root, splits)   # source domains only, val uses eval transform
+    srcs = source_datasets(root, splits)
     val_loaders = {
         d: DataLoader(srcs[d]['val'], batch_size=64, shuffle=False,
                       num_workers=cfg.get('num_workers', 2))
@@ -34,7 +34,6 @@ def main():
     model = build_method(cfg).to(device)
     model.load_state_dict(state['model'])
 
-    # Same eval + metric functions train.py uses for checkpoint selection.
     per_domain, mean_f1 = evaluate_sources(model, val_loaders, device)
     for d in SOURCE_DOMAINS:
         print(f"{d:14s}  macro-F1={per_domain[d]['f1']:.4f}  acc={per_domain[d]['acc']:.4f}")

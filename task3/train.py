@@ -9,15 +9,12 @@ from torch.utils.data import DataLoader
 
 from common.seed import set_seed
 from shared.pacs_protocol import load_splits, source_datasets, SOURCE_DOMAINS
-# Reuse Task 2's exact source-validation selection + loader helpers so the ERM
-# consistency check compares the same computation, not just the same intent.
 from task2.train import evaluate_sources, infinite, load_config, resolve_root
 from task3.methods.dan_dg import DANDG
 from task3.methods.sam import SAM
 
 
 def build_optimizer(params, cfg):
-    # Single source of truth for optimizer hyperparameters; also used by SAM.self_check.
     return torch.optim.AdamW(params, lr=cfg['lr'], weight_decay=cfg['weight_decay'])
 
 
@@ -30,8 +27,6 @@ def build_method(cfg):
             "Task 3. evaluate_sketch reads checkpoints/task2/source_only/best.pt "
             "directly via erm.yaml's reuse_checkpoint.")
     if m == 'dan_dg':
-        # n_per_source shares cfg['batch_per_source'] with the batch-balance assert
-        # below, so the slice width and the invariant can't drift apart.
         return DANDG(n, lambda_dg=cfg['lambda_dg'], n_per_source=cfg['batch_per_source'])
     if m == 'sam':
         return SAM(n, rho=cfg['rho'])
@@ -44,7 +39,7 @@ def write_logs(run, rows, csv_path, json_path):
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
         w.writerows(rows)
-    log = {k: [r[k] for r in rows] for k in fields}   # columnar, matches Task 2 logs_json
+    log = {k: [r[k] for r in rows] for k in fields}
     with open(json_path, 'w') as f:
         json.dump({'run': run, 'log': log}, f, indent=1)
 
@@ -82,7 +77,6 @@ def train(cfg, cli_root, resume):
     }
     src_iters = {d: infinite(src_train_loaders[d]) for d in SOURCE_DOMAINS}
 
-    # One epoch = one pass over the source training images (batch_per_source per domain).
     n_src_train = sum(len(srcs[d]['train']) for d in SOURCE_DOMAINS)
     iters_per_epoch = math.ceil(
         n_src_train / (cfg['batch_per_source'] * len(SOURCE_DOMAINS)))
@@ -90,7 +84,7 @@ def train(cfg, cli_root, resume):
 
     model = build_method(cfg).to(device)
     opt = build_optimizer(model.parameters(), cfg)
-    make_opt = lambda params: build_optimizer(params, cfg)   # same lr/wd for self_check
+    make_opt = lambda params: build_optimizer(params, cfg)
 
     ckpt_dir = os.path.join(os.environ.get('CKPT_DIR', 'checkpoints'),
                             'task3', cfg['run'])
@@ -118,28 +112,23 @@ def train(cfg, cli_root, resume):
         print(f"[resume] continuing from epoch {start_epoch} (best_f1={best_f1:.4f})")
 
     for epoch in range(start_epoch, cfg['max_epochs']):
-        model.train()  # backbone re-freezes BatchNorm here (see ResNet18Backbone.train)
+        model.train()
         cls_sum = mmd_sum = 0.0
         for _ in range(iters_per_epoch):
             progress = global_iter / max(total_iters, 1)
 
             xs_parts, ys_parts = [], []
             for d in SOURCE_DOMAINS:
-                x, y = next(src_iters[d])           # batch_per_source images from this source
+                x, y = next(src_iters[d])
                 xs_parts.append(x)
                 ys_parts.append(y)
-            xs = torch.cat(xs_parts).to(device)      # sources concatenated as per-domain blocks
+            xs = torch.cat(xs_parts).to(device)
             ys = torch.cat(ys_parts).to(device)
 
-            # DAN-DG slices xs into contiguous per-domain blocks; make the balance a loud
-            # invariant, not a silent assumption (a short/last batch would mis-group MMD).
             assert xs.shape[0] == len(SOURCE_DOMAINS) * cfg['batch_per_source'], (
                 f"expected {len(SOURCE_DOMAINS) * cfg['batch_per_source']} balanced "
                 f"source images, got {xs.shape[0]}")
 
-            # Step-0 self-check: must run AFTER model.train() (so the deepcopy inherits the
-            # frozen-BN state) but BEFORE the first optimizer step mutates the live weights.
-            # Do not move below model.optimize(...). No-op for every method except SAM.
             if global_iter == 0:
                 model.self_check(xs, ys, make_opt, cfg.get('max_grad_norm'))
 

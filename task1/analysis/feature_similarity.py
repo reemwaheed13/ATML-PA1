@@ -47,7 +47,6 @@ def get_transformed_feats(transform_fn, backbone, te_ds, test_idx, normalize, de
 
 
 def cosine_stability(clean, transformed):
-    # average cosine sim between each clean/transformed feature pair
     a = clean       / np.linalg.norm(clean,       axis=1, keepdims=True)
     b = transformed / np.linalg.norm(transformed, axis=1, keepdims=True)
     return float((a * b).sum(axis=1).mean())
@@ -91,7 +90,6 @@ def main():
         backbone = BackboneClass().to(device)
         norm = normalize_for(name)
 
-        # clean features already cached from run_task1.py
         clean_feats = np.load(
             os.path.join(args.cache_dir, name, f'{name}_test.npz')
         )['feats']
@@ -107,7 +105,6 @@ def main():
                                           pass_idx=use_idx)
             r[label] = cosine_stability(clean_feats, trans)
 
-        # translation: average stability across 4 directions per delta
         r['translation'] = {}
         for delta in [8, 16, 32]:
             stabs = []
@@ -117,7 +114,6 @@ def main():
                 stabs.append(cosine_stability(clean_feats, trans))
             r['translation'][delta] = float(np.mean(stabs))
 
-        # cue conflict — pair each conflict with the clean feature of its content image
         if _cc is not None:
             conf_feats = []
             with torch.no_grad():

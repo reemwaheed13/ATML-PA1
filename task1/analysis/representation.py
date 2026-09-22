@@ -48,7 +48,6 @@ def get_transformed_feats(transform_fn, backbone, te_ds, test_idx, normalize, de
 
 
 def plot_tsne(clean_feats, trans_feats, labels, title, out_path):
-    # fit tsne on clean + transformed together so they share the same 2d space
     combined = np.concatenate([clean_feats, trans_feats], axis=0)
     emb = TSNE(n_components=2, random_state=SEED, perplexity=30).fit_transform(combined)
 
@@ -61,7 +60,6 @@ def plot_tsne(clean_feats, trans_feats, labels, title, out_path):
 
     for cls in range(10):
         mask = labels == cls
-        # circles = clean, x = transformed
         ax.scatter(clean_emb[mask, 0], clean_emb[mask, 1],
                    c=[colors[cls]], marker='o', s=15, alpha=0.7, label=STL10_CLASSES[cls])
         ax.scatter(trans_emb[mask, 0], trans_emb[mask, 1],
