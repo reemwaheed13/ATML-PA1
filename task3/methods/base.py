@@ -15,3 +15,7 @@ class DGMethod(BaseMethod):
             torch.nn.utils.clip_grad_norm_(self.parameters(), max_grad_norm)
         opt.step()
         return info
+
+    def self_check(self, xs, ys, make_opt, max_grad_norm=None):
+        # No-op. Methods with a step-0 invariant to verify (e.g. SAM) override this.
+        pass

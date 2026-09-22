@@ -1,3 +1,5 @@
+import copy
+
 import torch
 import torch.nn.functional as F
 
@@ -57,3 +59,22 @@ class SAM(DGMethod):
             torch.nn.utils.clip_grad_norm_(self.parameters(), max_grad_norm)
         opt.step()                                 # AdamW update at theta using grad @ theta+eps
         return info
+
+    def self_check(self, xs, ys, make_opt, max_grad_norm=None):
+        # Step-0 invariant: rho=0 must reduce to plain AdamW, so a rho=0.05 step and a
+        # rho=0 step from the SAME weights on the SAME batch must move the parameters
+        # differently. Equal updates mean the ascent perturbation is a silent no-op
+        # (the SAM-restore or global-grad-norm trap). make_opt builds the throwaway
+        # optimizer from the SAME lr/wd as the real one, so the deltas are representative.
+        # Runs on deepcopies -> the live model, optimizer moments, and RNG are untouched.
+        def step_delta(rho):
+            m = copy.deepcopy(self)                 # inherits frozen-BN eval state of self
+            m.rho = rho
+            before = [p.detach().clone() for p in m.parameters()]
+            m.optimize(xs, ys, make_opt(m.parameters()), max_grad_norm=max_grad_norm)
+            return torch.cat([(p.detach() - b).flatten()
+                              for p, b in zip(m.parameters(), before)])
+        d_real, d_zero = step_delta(self.rho), step_delta(0.0)
+        assert not torch.allclose(d_real, d_zero), (
+            "SAM self-check: rho=0 and rho=0.05 give identical updates; "
+            "ascent perturbation is a no-op")

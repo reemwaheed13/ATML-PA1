@@ -69,7 +69,6 @@ def main():
 
     te_ds = STL10(root=args.data_dir, split='test', download=False)
 
-    # pre-load conflict images once; per-backbone norm applied inside the loop
     _cc_path = os.path.join(args.results_dir, 'task1_cue_conflicts_metadata.json')
     if os.path.exists(_cc_path):
         with open(_cc_path) as f:
@@ -90,7 +89,7 @@ def main():
     ]
 
     results = {}
-    cue_examples = {}   # per-backbone per-conflict predictions for qualitative failure analysis
+    cue_examples = {}   
 
     for name, BackboneClass, dim in configs:
         print(f"\n--- {name} ---")
@@ -170,7 +169,7 @@ def main():
             }
             print('  cue_conflict', r['cue_conflict'])
 
-            # per-image records so the report can pick informative agreements/failures
+        
             cue_examples[name] = [{
                 'filename':      _cc[k]['filename'],
                 'content_label': int(_cc_c[k]),
@@ -196,7 +195,7 @@ def main():
             json.dump(cue_examples, f, indent=2)
         print(f"saved → {cc_out}")
 
-    # translation curve: accuracy and consistency vs displacement (Required Evidence)
+
     os.makedirs(args.figures_dir, exist_ok=True)
     deltas = [0, 8, 16, 32]
     fig, (ax_acc, ax_con) = plt.subplots(1, 2, figsize=(11, 4))

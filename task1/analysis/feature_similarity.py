@@ -98,7 +98,7 @@ def main():
 
         r = {}
 
-        # single-shot interventions
+
         for label, fn, use_idx in [('grayscale',    to_grayscale,  False),
                                    ('hue_rotation', rotate_hue,    False),
                                    ('patch_shuffle', patch_shuffle, True)]:
