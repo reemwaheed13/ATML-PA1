@@ -70,7 +70,7 @@ def main():
     te_ds = STL10(root=args.data_dir, split='test', download=False)
 
     # pre-load conflict images once; per-backbone norm applied inside the loop
-    _cc_path = os.path.join(args.results_dir, 'cue_conflicts_metadata.json')
+    _cc_path = os.path.join(args.results_dir, 'task1_cue_conflicts_metadata.json')
     if os.path.exists(_cc_path):
         with open(_cc_path) as f:
             _cc = json.load(f)['conflicts']
@@ -81,7 +81,7 @@ def main():
         print(f"loaded {len(_cc)} cue-conflict images")
     else:
         _cc = None
-        print("cue_conflicts_metadata.json not found — run make_cue_conflicts.py first")
+        print("task1_cue_conflicts_metadata.json not found — run make_cue_conflicts.py first")
 
     configs = [
         ('resnet', ResNet50Backbone, RESNET50_DIM),
@@ -209,7 +209,7 @@ def main():
     for ax in (ax_acc, ax_con):
         ax.set_xticks(deltas); ax.legend(); ax.grid(alpha=0.3)
     fig.tight_layout()
-    curve_path = os.path.join(args.figures_dir, 'translation_curve.png')
+    curve_path = os.path.join(args.figures_dir, 'task1_translation_curve.png')
     fig.savefig(curve_path, dpi=150)
     plt.close(fig)
     print(f"saved → {curve_path}")

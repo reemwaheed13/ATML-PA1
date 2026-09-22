@@ -137,7 +137,7 @@ def main():
 
     # --- cue conflict: shape bias + coverage + per-image categories ---
     cue_examples = {}
-    _cc_path = os.path.join(args.results_dir, 'cue_conflicts_metadata.json')
+    _cc_path = os.path.join(args.results_dir, 'task1_cue_conflicts_metadata.json')
     if os.path.exists(_cc_path):
         with open(_cc_path) as f:
             _cc = json.load(f)['conflicts']
@@ -177,7 +177,7 @@ def main():
                              else 'other',
         } for k in range(n_total)]
     else:
-        print("cue_conflicts_metadata.json not found — skipping cue conflict")
+        print("task1_cue_conflicts_metadata.json not found — skipping cue conflict")
 
     # --- assert clean parity with the stored baseline (read, never hard-code) ---
     with open(os.path.join(args.results_dir, 'task1_clean_baseline.json')) as f:

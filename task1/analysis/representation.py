@@ -93,7 +93,7 @@ def main():
     te_ds = STL10(root=args.data_dir, split='test', download=False)
     os.makedirs(args.figures_dir, exist_ok=True)
 
-    _cc_path = os.path.join(args.results_dir, 'cue_conflicts_metadata.json')
+    _cc_path = os.path.join(args.results_dir, 'task1_cue_conflicts_metadata.json')
     if os.path.exists(_cc_path):
         with open(_cc_path) as f:
             _cc = json.load(f)['conflicts']
@@ -128,7 +128,7 @@ def main():
             print(f"  {label}")
             trans_feats = get_transformed_feats(fn, backbone, te_ds, test_idx, norm, device,
                                                 pass_idx=use_idx)
-            out_path = os.path.join(args.figures_dir, f'tsne_{name}_{label}.png')
+            out_path = os.path.join(args.figures_dir, f'task1_tsne_{name}_{label}.png')
             plot_tsne(clean_feats, trans_feats, labels,
                       title=f't-SNE: {name} — {label}', out_path=out_path)
 
@@ -141,7 +141,7 @@ def main():
                     conf_feats.append(backbone(batch).cpu().numpy())
             conf_feats   = np.concatenate(conf_feats, axis=0)
             clean_paired = np.array([clean_feats[c['content_pos']] for c in _cc])
-            out_path = os.path.join(args.figures_dir, f'tsne_{name}_cue_conflict.png')
+            out_path = os.path.join(args.figures_dir, f'task1_tsne_{name}_cue_conflict.png')
             plot_tsne(clean_paired, conf_feats, _cc_lbls,
                       title=f't-SNE: {name} — cue_conflict', out_path=out_path)
 

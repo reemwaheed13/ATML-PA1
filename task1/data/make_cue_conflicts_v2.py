@@ -37,7 +37,7 @@ def main():
     ap.add_argument('--data_dir',    default='./data')
     ap.add_argument('--results_dir', default='./results')
     ap.add_argument('--out_dir',     default='results/cue_conflicts')
-    ap.add_argument('--meta_path',   default='results/cue_conflicts_metadata.json')
+    ap.add_argument('--meta_path',   default='results/task1_cue_conflicts_metadata.json')
     ap.add_argument('--n_per_dir',   type=int, default=base.N_PER_DIR)
     ap.add_argument('--steps',       type=int, default=base.OPT_STEPS)
     ap.add_argument('--style_scale', type=float, required=True)

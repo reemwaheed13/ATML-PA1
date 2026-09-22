@@ -69,7 +69,7 @@ def main():
 
     te_ds = STL10(root=args.data_dir, split='test', download=False)
 
-    _cc_path = os.path.join(args.results_dir, 'cue_conflicts_metadata.json')
+    _cc_path = os.path.join(args.results_dir, 'task1_cue_conflicts_metadata.json')
     if os.path.exists(_cc_path):
         with open(_cc_path) as f:
             _cc = json.load(f)['conflicts']

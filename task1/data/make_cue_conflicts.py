@@ -122,7 +122,7 @@ def main():
 
     parser.add_argument('--results_dir', default='./results')
     parser.add_argument('--out_dir',     default='results/cue_conflicts')
-    parser.add_argument('--meta_path',   default='results/cue_conflicts_metadata.json')
+    parser.add_argument('--meta_path',   default='results/task1_cue_conflicts_metadata.json')
     parser.add_argument('--n_per_dir',   type=int,   default=N_PER_DIR)
     parser.add_argument('--steps',       type=int,   default=OPT_STEPS)
     parser.add_argument('--style_scale', type=float, default=1.0)
@@ -196,7 +196,7 @@ def main():
     if len(metadata) < 200:
         print(f"WARNING: only {len(metadata)} saved — increase --n_per_dir")
 
-    meta_path = os.path.join(args.results_dir, 'cue_conflicts_metadata.json')
+    meta_path = os.path.join(args.results_dir, 'task1_cue_conflicts_metadata.json')
     with open(meta_path, 'w') as f:
         json.dump({
             'rejection_rule': 'pixel_std<8 or mean<15 or mean>240',
