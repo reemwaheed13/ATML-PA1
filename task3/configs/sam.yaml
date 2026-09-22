@@ -1,0 +1,4 @@
+# SAM: non-adaptive sharpness-aware minimization, rho=0.05. Two forward/backward passes per step.
+run: sam
+method: sam
+rho: 0.05

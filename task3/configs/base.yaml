@@ -1,0 +1,20 @@
+seed: 6304
+num_classes: 7
+
+split_path: shared/splits/pacs_sketch_seed6304.json
+source_domains: [photo, art_painting, cartoon]
+target_domain: sketch          # never loaded in training/selection; final eval only
+pacs_root: null
+num_workers: 2
+
+batch_per_source: 8            # 8 per source domain = 24 source images per update, no target
+
+lr: 1.0e-4
+weight_decay: 1.0e-4
+max_epochs: 30
+patience: 5
+
+# Kept at 1.0 to match the reused Task 2 ERM (source_only) checkpoint, which inherited
+# max_grad_norm from task2 base.yaml and was retrained with it (2d6c2fd); also guards the
+# lambda_dg=10 sweep point (cf. Task 2 dan_lambda10 collapse).
+max_grad_norm: 1.0

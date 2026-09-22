@@ -79,7 +79,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_dir',    default='./data')
     parser.add_argument('--cache_dir',   default='./cache/features')
-    parser.add_argument('--results_dir', default='./results')
+    parser.add_argument('--results_dir', default='./results/task1')
     parser.add_argument('--figures_dir', default='./report/figures')
     args = parser.parse_args()
 

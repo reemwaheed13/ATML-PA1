@@ -120,9 +120,9 @@ def main():
     parser.add_argument('--data_dir',    default='./data')
 
 
-    parser.add_argument('--results_dir', default='./results')
-    parser.add_argument('--out_dir',     default='results/cue_conflicts')
-    parser.add_argument('--meta_path',   default='results/task1_cue_conflicts_metadata.json')
+    parser.add_argument('--results_dir', default='./results/task1')
+    parser.add_argument('--out_dir',     default='results/task1/cue_conflicts')
+    parser.add_argument('--meta_path',   default='results/task1/task1_cue_conflicts_metadata.json')
     parser.add_argument('--n_per_dir',   type=int,   default=N_PER_DIR)
     parser.add_argument('--steps',       type=int,   default=OPT_STEPS)
     parser.add_argument('--style_scale', type=float, default=1.0)

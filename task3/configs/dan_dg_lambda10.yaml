@@ -1,0 +1,4 @@
+# DAN-DG lambda-sweep point (analysis only; main comparison stays lambda_dg=1).
+run: dan_dg_lambda10
+method: dan_dg
+lambda_dg: 10.0

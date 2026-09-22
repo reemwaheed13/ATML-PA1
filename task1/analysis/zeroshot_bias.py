@@ -65,7 +65,7 @@ def eval_zs(transform_fn, clip_bb, text_f, scale, te_ds, test_idx, norm, device,
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_dir',    default='./data')
-    parser.add_argument('--results_dir', default='./results')
+    parser.add_argument('--results_dir', default='./results/task1')
     args = parser.parse_args()
 
     set_seed(SEED)

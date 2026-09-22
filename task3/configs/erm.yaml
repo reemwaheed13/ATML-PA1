@@ -1,0 +1,4 @@
+# ERM baseline = Task 2 source_only checkpoint, REUSED UNCHANGED (not retrained in Task 3).
+run: erm
+method: source_only
+reuse_checkpoint: checkpoints/task2/source_only/best.pt

@@ -1,0 +1,4 @@
+# DAN-DG: ERM + (lambda_dg/3) * sum_{e<e'} MMD^2(F(X_e), F(X_e')). Main comparison.
+run: dan_dg
+method: dan_dg
+lambda_dg: 1.0
