@@ -9,297 +9,297 @@
    "domain": 0.712,
    "feat_L2": 20.69,
    "max_abs_dlogit": 0.17,
-   "bb_grad": 9.81
+   "bb_grad": 0.08
   },
   {
    "iter": 10.0,
    "p": 0.0016,
    "alpha": 0.0082,
-   "cls": 1.341,
-   "domain": 0.504,
-   "feat_L2": 26.39,
+   "cls": 1.373,
+   "domain": 0.507,
+   "feat_L2": 27.09,
    "max_abs_dlogit": 0.95,
-   "bb_grad": 12.48
+   "bb_grad": 0.09
   },
   {
    "iter": 20.0,
    "p": 0.0033,
    "alpha": 0.0164,
-   "cls": 0.943,
-   "domain": 0.401,
-   "feat_L2": 34.0,
-   "max_abs_dlogit": 2.47,
-   "bb_grad": 12.82
+   "cls": 1.003,
+   "domain": 0.393,
+   "feat_L2": 35.61,
+   "max_abs_dlogit": 2.24,
+   "bb_grad": 0.08
   },
   {
    "iter": 30.0,
    "p": 0.0049,
    "alpha": 0.0246,
-   "cls": 0.538,
-   "domain": 0.284,
-   "feat_L2": 35.43,
-   "max_abs_dlogit": 3.14,
-   "bb_grad": 7.43
+   "cls": 0.474,
+   "domain": 0.283,
+   "feat_L2": 37.28,
+   "max_abs_dlogit": 2.95,
+   "bb_grad": 0.09
   },
   {
    "iter": 40.0,
    "p": 0.0066,
    "alpha": 0.0328,
-   "cls": 0.363,
-   "domain": 0.265,
-   "feat_L2": 42.76,
-   "max_abs_dlogit": 4.95,
-   "bb_grad": 8.66
+   "cls": 0.507,
+   "domain": 0.297,
+   "feat_L2": 34.15,
+   "max_abs_dlogit": 3.6,
+   "bb_grad": 0.1
   },
   {
    "iter": 50.0,
    "p": 0.0082,
    "alpha": 0.041,
-   "cls": 0.506,
-   "domain": 0.252,
-   "feat_L2": 43.87,
-   "max_abs_dlogit": 3.82,
-   "bb_grad": 11.33
+   "cls": 0.559,
+   "domain": 0.273,
+   "feat_L2": 40.56,
+   "max_abs_dlogit": 3.51,
+   "bb_grad": 0.09
   },
   {
    "iter": 60.0,
    "p": 0.0099,
    "alpha": 0.0492,
-   "cls": 0.67,
-   "domain": 0.23,
-   "feat_L2": 36.34,
-   "max_abs_dlogit": 2.71,
-   "bb_grad": 14.15
+   "cls": 0.583,
+   "domain": 0.233,
+   "feat_L2": 37.37,
+   "max_abs_dlogit": 3.54,
+   "bb_grad": 0.09
   },
   {
    "iter": 70.0,
    "p": 0.0115,
    "alpha": 0.0574,
-   "cls": 0.546,
-   "domain": 0.306,
-   "feat_L2": 50.16,
-   "max_abs_dlogit": 5.27,
-   "bb_grad": 9.94
+   "cls": 0.595,
+   "domain": 0.349,
+   "feat_L2": 50.56,
+   "max_abs_dlogit": 6.93,
+   "bb_grad": 0.09
   },
   {
    "iter": 80.0,
    "p": 0.0131,
    "alpha": 0.0656,
-   "cls": 0.356,
-   "domain": 0.3,
-   "feat_L2": 56.23,
-   "max_abs_dlogit": 4.72,
-   "bb_grad": 11.63
+   "cls": 0.372,
+   "domain": 0.345,
+   "feat_L2": 51.84,
+   "max_abs_dlogit": 4.55,
+   "bb_grad": 0.09
   },
   {
    "iter": 90.0,
    "p": 0.0148,
    "alpha": 0.0738,
-   "cls": 0.199,
-   "domain": 0.393,
-   "feat_L2": 45.74,
-   "max_abs_dlogit": 4.86,
-   "bb_grad": 6.71
+   "cls": 0.327,
+   "domain": 0.433,
+   "feat_L2": 46.39,
+   "max_abs_dlogit": 3.84,
+   "bb_grad": 0.09
   },
   {
    "iter": 100.0,
    "p": 0.0164,
    "alpha": 0.0819,
-   "cls": 0.692,
-   "domain": 0.396,
-   "feat_L2": 50.95,
-   "max_abs_dlogit": 5.0,
-   "bb_grad": 15.92
+   "cls": 0.593,
+   "domain": 0.409,
+   "feat_L2": 54.02,
+   "max_abs_dlogit": 3.9,
+   "bb_grad": 0.09
   },
   {
    "iter": 110.0,
    "p": 0.0181,
    "alpha": 0.0901,
-   "cls": 0.185,
-   "domain": 0.606,
-   "feat_L2": 40.69,
-   "max_abs_dlogit": 3.72,
-   "bb_grad": 3.69
+   "cls": 0.443,
+   "domain": 0.547,
+   "feat_L2": 41.75,
+   "max_abs_dlogit": 2.91,
+   "bb_grad": 0.09
   },
   {
    "iter": 120.0,
    "p": 0.0197,
    "alpha": 0.0982,
-   "cls": 0.527,
-   "domain": 0.598,
-   "feat_L2": 48.67,
-   "max_abs_dlogit": 3.86,
-   "bb_grad": 8.49
+   "cls": 0.669,
+   "domain": 0.834,
+   "feat_L2": 46.65,
+   "max_abs_dlogit": 3.32,
+   "bb_grad": 0.09
   },
   {
    "iter": 130.0,
    "p": 0.0213,
    "alpha": 0.1063,
-   "cls": 0.15,
-   "domain": 0.623,
-   "feat_L2": 56.9,
-   "max_abs_dlogit": 2.77,
-   "bb_grad": 6.18
+   "cls": 0.32,
+   "domain": 1.157,
+   "feat_L2": 74.59,
+   "max_abs_dlogit": 3.31,
+   "bb_grad": 0.08
   },
   {
    "iter": 140.0,
    "p": 0.023,
    "alpha": 0.1144,
-   "cls": 0.37,
-   "domain": 1.072,
-   "feat_L2": 60.46,
-   "max_abs_dlogit": 3.95,
-   "bb_grad": 7.2
+   "cls": 0.613,
+   "domain": 1.163,
+   "feat_L2": 72.54,
+   "max_abs_dlogit": 2.72,
+   "bb_grad": 0.08
   },
   {
    "iter": 150.0,
    "p": 0.0246,
    "alpha": 0.1225,
-   "cls": 0.297,
-   "domain": 1.047,
-   "feat_L2": 70.71,
-   "max_abs_dlogit": 3.08,
-   "bb_grad": 12.07
+   "cls": 0.186,
+   "domain": 0.695,
+   "feat_L2": 69.63,
+   "max_abs_dlogit": 3.51,
+   "bb_grad": 0.08
   },
   {
    "iter": 160.0,
    "p": 0.0263,
    "alpha": 0.1306,
-   "cls": 0.306,
-   "domain": 1.861,
-   "feat_L2": 79.73,
-   "max_abs_dlogit": 4.83,
-   "bb_grad": 11.55
+   "cls": 0.108,
+   "domain": 1.053,
+   "feat_L2": 72.91,
+   "max_abs_dlogit": 5.16,
+   "bb_grad": 0.07
   },
   {
    "iter": 170.0,
    "p": 0.0279,
    "alpha": 0.1387,
-   "cls": 0.829,
-   "domain": 7.884,
-   "feat_L2": 395.13,
-   "max_abs_dlogit": 31.31,
-   "bb_grad": 28.87
+   "cls": 0.139,
+   "domain": 0.697,
+   "feat_L2": 81.78,
+   "max_abs_dlogit": 4.67,
+   "bb_grad": 0.07
   },
   {
    "iter": 180.0,
    "p": 0.0296,
    "alpha": 0.1467,
-   "cls": 3.763,
-   "domain": 77.948,
-   "feat_L2": 2756.12,
-   "max_abs_dlogit": 199.89,
-   "bb_grad": 105.35
+   "cls": 0.402,
+   "domain": 0.56,
+   "feat_L2": 76.6,
+   "max_abs_dlogit": 3.98,
+   "bb_grad": 0.09
   },
   {
    "iter": 190.0,
    "p": 0.0312,
    "alpha": 0.1547,
-   "cls": 1108.351,
-   "domain": 17701.186,
-   "feat_L2": 303202.75,
-   "max_abs_dlogit": 23333.09,
-   "bb_grad": 19795.86
+   "cls": 0.292,
+   "domain": 0.387,
+   "feat_L2": 88.67,
+   "max_abs_dlogit": 4.91,
+   "bb_grad": 0.09
   },
   {
    "iter": 200.0,
    "p": 0.0328,
    "alpha": 0.1627,
-   "cls": 37.097,
-   "domain": 44444.84,
-   "feat_L2": 4145448.5,
-   "max_abs_dlogit": 211456.08,
-   "bb_grad": 112442.66
+   "cls": 0.115,
+   "domain": 0.415,
+   "feat_L2": 65.25,
+   "max_abs_dlogit": 3.19,
+   "bb_grad": 0.09
   },
   {
    "iter": 210.0,
    "p": 0.0345,
    "alpha": 0.1707,
-   "cls": 44197.66,
-   "domain": 2154594.0,
-   "feat_L2": 48221216.0,
-   "max_abs_dlogit": 1982153.62,
-   "bb_grad": 3514673.62
+   "cls": 0.054,
+   "domain": 0.392,
+   "feat_L2": 74.77,
+   "max_abs_dlogit": 5.02,
+   "bb_grad": 0.09
   },
   {
    "iter": 220.0,
    "p": 0.0361,
    "alpha": 0.1787,
-   "cls": 138508.25,
-   "domain": 1116314.5,
-   "feat_L2": 867968000.0,
-   "max_abs_dlogit": 55389136.0,
-   "bb_grad": 3546216.49
+   "cls": 0.503,
+   "domain": 0.628,
+   "feat_L2": 64.91,
+   "max_abs_dlogit": 3.41,
+   "bb_grad": 0.09
   },
   {
    "iter": 230.0,
    "p": 0.0378,
    "alpha": 0.1866,
-   "cls": 2089.773,
-   "domain": 2736.53,
-   "feat_L2": 1474145.0,
-   "max_abs_dlogit": 21049.62,
-   "bb_grad": 10452429.25
+   "cls": 0.417,
+   "domain": 0.523,
+   "feat_L2": 59.59,
+   "max_abs_dlogit": 3.48,
+   "bb_grad": 0.09
   },
   {
    "iter": 240.0,
    "p": 0.0394,
    "alpha": 0.1945,
-   "cls": 4309.908,
-   "domain": 4787.53,
-   "feat_L2": 2103925.25,
-   "max_abs_dlogit": 25157.4,
-   "bb_grad": 4394669.64
+   "cls": 0.092,
+   "domain": 0.552,
+   "feat_L2": 58.09,
+   "max_abs_dlogit": 2.72,
+   "bb_grad": 0.07
   },
   {
    "iter": 250.0,
    "p": 0.0411,
    "alpha": 0.2024,
-   "cls": 3740.628,
-   "domain": 2897.749,
-   "feat_L2": 1785611.75,
-   "max_abs_dlogit": 43228.87,
-   "bb_grad": 3685488.08
+   "cls": 0.176,
+   "domain": 1.148,
+   "feat_L2": 67.57,
+   "max_abs_dlogit": 3.35,
+   "bb_grad": 0.07
   },
   {
    "iter": 260.0,
    "p": 0.0427,
    "alpha": 0.2103,
-   "cls": 11395.058,
-   "domain": 4393.491,
-   "feat_L2": 1151922.38,
-   "max_abs_dlogit": 21000.24,
-   "bb_grad": 3058332.48
+   "cls": 0.069,
+   "domain": 0.523,
+   "feat_L2": 118.71,
+   "max_abs_dlogit": 5.91,
+   "bb_grad": 0.03
   },
   {
    "iter": 270.0,
    "p": 0.0443,
    "alpha": 0.2181,
-   "cls": 5659.716,
-   "domain": 1578.252,
-   "feat_L2": 661496.94,
-   "max_abs_dlogit": 7670.82,
-   "bb_grad": 1013086.29
+   "cls": 0.187,
+   "domain": 0.666,
+   "feat_L2": 79.28,
+   "max_abs_dlogit": 4.05,
+   "bb_grad": 0.09
   },
   {
    "iter": 280.0,
    "p": 0.046,
    "alpha": 0.2259,
-   "cls": 2916.599,
-   "domain": 438.409,
-   "feat_L2": 196596.8,
-   "max_abs_dlogit": 3808.09,
-   "bb_grad": 363851.56
+   "cls": 0.106,
+   "domain": 0.857,
+   "feat_L2": 113.01,
+   "max_abs_dlogit": 4.44,
+   "bb_grad": 0.08
   },
   {
    "iter": 290.0,
    "p": 0.0476,
    "alpha": 0.2337,
-   "cls": 402.742,
-   "domain": 29.041,
-   "feat_L2": 24072.05,
-   "max_abs_dlogit": 212.14,
-   "bb_grad": 87272.09
+   "cls": 0.271,
+   "domain": 0.535,
+   "feat_L2": 109.23,
+   "max_abs_dlogit": 3.8,
+   "bb_grad": 0.09
   }
  ]
 }
