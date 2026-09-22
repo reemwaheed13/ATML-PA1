@@ -167,6 +167,9 @@ def train(cfg, cli_root, resume):
             loss, info = model.compute_loss(xs, ys, xt, progress)
             opt.zero_grad()
             loss.backward()
+            if cfg.get('max_grad_norm'):
+                torch.nn.utils.clip_grad_norm_(model.parameters(),
+                                               cfg['max_grad_norm'])
             opt.step()
 
             cls_sum += info.get('cls', 0.0)

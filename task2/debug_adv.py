@@ -95,6 +95,9 @@ def main():
         loss, info = model.compute_loss(xs, ys, xt, progress)
         opt.zero_grad()
         loss.backward()
+        # Clip exactly as train.py does, so the probe reflects the real run.
+        if cfg.get('max_grad_norm'):
+            torch.nn.utils.clip_grad_norm_(model.parameters(), cfg['max_grad_norm'])
         gnorm = backbone_grad_norm(model)
         opt.step()
 

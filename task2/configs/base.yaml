@@ -20,6 +20,14 @@ weight_decay: 1.0e-4
 max_epochs: 30
 patience: 5
 
+# Global gradient-norm clip applied uniformly to every method between
+# backward() and opt.step(). Stabilises the DANN/CDAN gradient-reversal
+# feedback loop (feature norm -> discriminator logits -> reversed gradient ->
+# larger feature norm) that frozen BatchNorm cannot damp; leaves the loss,
+# loss weights, and alpha schedule untouched. DAN / source-only never reach
+# this threshold, so their results are unchanged. Set to 0 or null to disable.
+max_grad_norm: 1.0
+
 # Definitions the manual leaves to us (documented here, reported in chat):
 #  * one epoch  = one pass over the source training images
 #                 iters_per_epoch = ceil(N_source_train / (batch_per_source * 3))
