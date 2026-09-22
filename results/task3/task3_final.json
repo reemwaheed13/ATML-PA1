@@ -1,0 +1,245 @@
+{
+  "classes": [
+    "dog",
+    "elephant",
+    "giraffe",
+    "guitar",
+    "horse",
+    "house",
+    "person"
+  ],
+  "separability_chance": 0.3333333333333333,
+  "erm_consistency": {
+    "checked": true,
+    "match": true,
+    "task2_target_acc": 0.6777806057520998,
+    "task2_target_f1": 0.6821883135655525
+  },
+  "methods": {
+    "erm": {
+      "per_domain": {
+        "photo": {
+          "acc": 0.9730538922155688,
+          "f1": 0.9673303966855572
+        },
+        "art_painting": {
+          "acc": 0.8707317073170732,
+          "f1": 0.8735961011705067
+        },
+        "cartoon": {
+          "acc": 0.9530916844349681,
+          "f1": 0.9592364866038123
+        }
+      },
+      "source_summary": {
+        "mean_acc": 0.9322924279892034,
+        "mean_f1": 0.9333876614866256,
+        "worst_acc": 0.8707317073170732,
+        "worst_acc_domain": "art_painting",
+        "worst_f1": 0.8735961011705067,
+        "worst_f1_domain": "art_painting"
+      },
+      "source_separability": 0.8803986710963455,
+      "sep_n_per_domain": 334,
+      "sharpness": {
+        "loss": 0.6753273606300354,
+        "loss_perturbed": 1.4600249528884888,
+        "delta_sharpness": 0.7846975922584534
+      },
+      "target_acc": 0.6777806057520998,
+      "target_f1": 0.6821883135655525,
+      "target_acc_change_vs_erm": 0.0,
+      "per_class_acc": [
+        0.2862694300518135,
+        0.9716216216216216,
+        0.5378486055776892,
+        0.9095394736842105,
+        0.7573529411764706,
+        0.65,
+        0.59375
+      ],
+      "per_class_change_vs_erm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "dan_dg": {
+      "per_domain": {
+        "photo": {
+          "acc": 0.25748502994011974,
+          "f1": 0.058503401360544216
+        },
+        "art_painting": {
+          "acc": 0.21951219512195122,
+          "f1": 0.05142857142857143
+        },
+        "cartoon": {
+          "acc": 0.17270788912579957,
+          "f1": 0.04207792207792208
+        }
+      },
+      "source_summary": {
+        "mean_acc": 0.21656837139595686,
+        "mean_f1": 0.05066996495567924,
+        "worst_acc": 0.17270788912579957,
+        "worst_acc_domain": "cartoon",
+        "worst_f1": 0.04207792207792208,
+        "worst_f1_domain": "cartoon"
+      },
+      "source_separability": 0.4584717607973422,
+      "sep_n_per_domain": 334,
+      "sharpness": {
+        "loss": 1.939306616783142,
+        "loss_perturbed": 1.9475889205932617,
+        "delta_sharpness": 0.008282303810119629
+      },
+      "target_acc": 0.04072283023670145,
+      "target_f1": 0.011179820424134438,
+      "target_acc_change_vs_erm": -0.6370577755153983,
+      "per_class_acc": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "per_class_change_vs_erm": [
+        -0.2862694300518135,
+        -0.9716216216216216,
+        -0.5378486055776892,
+        -0.9095394736842105,
+        -0.7573529411764706,
+        -0.65,
+        0.40625
+      ],
+      "largest_gain": {
+        "class": "person",
+        "delta": 0.40625,
+        "confusions": []
+      },
+      "largest_drop": {
+        "class": "elephant",
+        "delta": -0.9716216216216216,
+        "confusions": [
+          {
+            "predicted": "person",
+            "count": 740
+          }
+        ]
+      }
+    },
+    "sam": {
+      "per_domain": {
+        "photo": {
+          "acc": 0.9760479041916168,
+          "f1": 0.9710175791700523
+        },
+        "art_painting": {
+          "acc": 0.9219512195121952,
+          "f1": 0.9234661984504672
+        },
+        "cartoon": {
+          "acc": 0.9488272921108742,
+          "f1": 0.9546170493800296
+        }
+      },
+      "source_summary": {
+        "mean_acc": 0.9489421386048954,
+        "mean_f1": 0.9497002756668497,
+        "worst_acc": 0.9219512195121952,
+        "worst_acc_domain": "art_painting",
+        "worst_f1": 0.9234661984504672,
+        "worst_f1_domain": "art_painting"
+      },
+      "source_separability": 0.8704318936877077,
+      "sep_n_per_domain": 334,
+      "sharpness": {
+        "loss": 0.23706620931625366,
+        "loss_perturbed": 0.4625205099582672,
+        "delta_sharpness": 0.22545430064201355
+      },
+      "target_acc": 0.6278951387121405,
+      "target_f1": 0.6540737452419118,
+      "target_acc_change_vs_erm": -0.04988546703995922,
+      "per_class_acc": [
+        0.7357512953367875,
+        0.5391891891891892,
+        0.31739707835325365,
+        0.819078947368421,
+        0.7071078431372549,
+        0.675,
+        0.825
+      ],
+      "per_class_change_vs_erm": [
+        0.449481865284974,
+        -0.43243243243243235,
+        -0.22045152722443556,
+        -0.09046052631578949,
+        -0.05024509803921562,
+        0.025000000000000022,
+        0.23124999999999996
+      ],
+      "largest_gain": {
+        "class": "dog",
+        "delta": 0.449481865284974,
+        "confusions": [
+          {
+            "predicted": "horse",
+            "count": 99
+          },
+          {
+            "predicted": "elephant",
+            "count": 53
+          }
+        ]
+      },
+      "largest_drop": {
+        "class": "elephant",
+        "delta": -0.43243243243243235,
+        "confusions": [
+          {
+            "predicted": "dog",
+            "count": 329
+          },
+          {
+            "predicted": "person",
+            "count": 10
+          }
+        ]
+      }
+    }
+  },
+  "design_study": {
+    "dan_dg_lambda0.1": {
+      "lambda_dg": 0.1,
+      "mean_src_f1": 0.9475364134734172,
+      "worst_src_f1": 0.9119725207311423,
+      "source_separability": 0.760797342192691,
+      "delta_sharpness": 0.4225085377693176,
+      "target_acc": 0.680580300330873
+    },
+    "dan_dg": {
+      "lambda_dg": 1.0,
+      "mean_src_f1": 0.05066996495567924,
+      "worst_src_f1": 0.04207792207792208,
+      "source_separability": 0.4584717607973422,
+      "delta_sharpness": 0.008282303810119629,
+      "target_acc": 0.04072283023670145
+    },
+    "dan_dg_lambda10": {
+      "lambda_dg": 10.0,
+      "mean_src_f1": 0.05066996495567924,
+      "worst_src_f1": 0.04207792207792208,
+      "source_separability": 0.33222591362126247,
+      "delta_sharpness": 0.022606253623962402,
+      "target_acc": 0.04072283023670145
+    }
+  }
+}
