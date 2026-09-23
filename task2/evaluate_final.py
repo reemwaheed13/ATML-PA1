@@ -21,7 +21,8 @@ from task2.evaluation.class_analysis import (
 )
 
 SEED = 6304
-MAIN_RUNS = ['source_only', 'dan', 'dann', 'cdan']
+MAIN_RUNS = ['source_only', 'dan', 'dann', 'cdan',
+             'dan_warmup', 'dann_fix', 'cdan_fix']
 DESIGN_RUNS = ['dan_lambda0.1', 'dan', 'dan_lambda10']
 
 

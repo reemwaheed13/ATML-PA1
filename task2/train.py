@@ -25,11 +25,14 @@ def build_method(cfg):
     if m == 'source_only':
         return SourceOnly(n)
     if m == 'dan':
-        return DAN(n, lambda_mmd=cfg['lambda_mmd'])
+        return DAN(n, lambda_mmd=cfg['lambda_mmd'],
+                   warmup_frac=cfg.get('lambda_warmup_frac', 0.0))
     if m == 'dann':
-        return DANN(n, max_lambda=cfg['max_lambda'])
+        return DANN(n, max_lambda=cfg['max_lambda'],
+                    feature_norm=cfg.get('feature_norm', False))
     if m == 'cdan':
-        return CDAN(n, max_lambda=cfg['max_lambda'])
+        return CDAN(n, max_lambda=cfg['max_lambda'],
+                    feature_norm=cfg.get('feature_norm', False))
     raise ValueError(f"unknown method {m!r}")
 
 

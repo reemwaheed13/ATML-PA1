@@ -27,13 +27,14 @@ from task3.evaluation.sharpness import make_sharpness_batch, sharpness
 from task3.evaluation.compare_task2 import write_comparison
 
 SEED = 6304
-MAIN_RUNS = ['erm', 'dan_dg', 'sam']
+MAIN_RUNS = ['erm', 'dan_dg', 'sam', 'dan_dg_warmup']
 DESIGN_RUNS = ['dan_dg_lambda0.1', 'dan_dg', 'dan_dg_lambda10']
 LAMBDA_DG = {'dan_dg_lambda0.1': 0.1, 'dan_dg': 1.0, 'dan_dg_lambda10': 10.0}
 RUN_CONFIGS = {
     'erm': 'task3/configs/erm.yaml',
     'dan_dg': 'task3/configs/dan_dg.yaml',
     'sam': 'task3/configs/sam.yaml',
+    'dan_dg_warmup': 'task3/configs/dan_dg_warmup.yaml',
     'dan_dg_lambda0.1': 'task3/configs/dan_dg_lambda0.1.yaml',
     'dan_dg_lambda10': 'task3/configs/dan_dg_lambda10.yaml',
 }
@@ -47,7 +48,8 @@ def build_eval_method(cfg):
     if m == 'source_only':
         return SourceOnly(n)
     if m == 'dan_dg':
-        return DANDG(n, lambda_dg=cfg['lambda_dg'], n_per_source=cfg['batch_per_source'])
+        return DANDG(n, lambda_dg=cfg['lambda_dg'], n_per_source=cfg['batch_per_source'],
+                     warmup_frac=cfg.get('lambda_warmup_frac', 0.0))
     if m == 'sam':
         return SAM(n, rho=cfg['rho'])
     raise ValueError(f"unknown method {m!r}")
@@ -137,7 +139,7 @@ def write_curves(log_root, out_path):
     import matplotlib.pyplot as plt
 
     fig, (ax_cls, ax_mmd) = plt.subplots(1, 2, figsize=(11, 4))
-    for run in DESIGN_RUNS + ['sam']:
+    for run in DESIGN_RUNS + ['dan_dg_warmup', 'sam']:
         path = os.path.join(log_root, f'{run}.csv')
         if not os.path.exists(path):
             continue

@@ -20,14 +20,25 @@ def mmd_loss(fs, ft, muls=(0.5, 1.0, 2.0)):
     return loss
 
 
+def mmd_warmup_scale(progress, warmup_frac):
+    """Ramp the alignment weight 0->1 linearly over the first `warmup_frac` of
+    training progress, then hold at 1. warmup_frac<=0 returns 1.0 (no-op), so
+    runs without the knob behave exactly as before."""
+    if warmup_frac and warmup_frac > 0:
+        return min(1.0, progress / warmup_frac)
+    return 1.0
+
+
 class DAN(BaseMethod):
-    def __init__(self, num_classes=7, lambda_mmd=1.0):
+    def __init__(self, num_classes=7, lambda_mmd=1.0, warmup_frac=0.0):
         super().__init__(num_classes)
         self.lambda_mmd = lambda_mmd
+        self.warmup_frac = warmup_frac
 
     def compute_loss(self, xs, ys, xt, progress=0.0):
         fs, ft = self.backbone(xs), self.backbone(xt)
         cls = F.cross_entropy(self.head(fs), ys)
         mmd = mmd_loss(fs, ft)
-        loss = cls + self.lambda_mmd * mmd
+        lam = self.lambda_mmd * mmd_warmup_scale(progress, self.warmup_frac)
+        loss = cls + lam * mmd
         return loss, {'cls': cls.item(), 'mmd': mmd.item()}

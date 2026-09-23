@@ -27,7 +27,8 @@ def build_method(cfg):
             "Task 3. evaluate_sketch reads checkpoints/task2/source_only/best.pt "
             "directly via erm.yaml's reuse_checkpoint.")
     if m == 'dan_dg':
-        return DANDG(n, lambda_dg=cfg['lambda_dg'], n_per_source=cfg['batch_per_source'])
+        return DANDG(n, lambda_dg=cfg['lambda_dg'], n_per_source=cfg['batch_per_source'],
+                     warmup_frac=cfg.get('lambda_warmup_frac', 0.0))
     if m == 'sam':
         return SAM(n, rho=cfg['rho'])
     raise ValueError(f"unknown method {m!r}")

@@ -8,10 +8,11 @@ from task2.methods.dann import domain_labels
 
 
 class CDAN(BaseMethod):
-    def __init__(self, num_classes=7, max_lambda=1.0):
+    def __init__(self, num_classes=7, max_lambda=1.0, feature_norm=False):
         super().__init__(num_classes)
         self.discriminator = DomainDiscriminator(FEATURE_DIM * num_classes)
         self.max_lambda = max_lambda
+        self.feature_norm = feature_norm
 
     def compute_loss(self, xs, ys, xt, progress=0.0):
         fs, ft = self.backbone(xs), self.backbone(xt)
@@ -20,6 +21,8 @@ class CDAN(BaseMethod):
         f = torch.cat([fs, ft], 0)
         p = F.softmax(torch.cat([ls, lt], 0), dim=1)
         g = torch.bmm(f.unsqueeze(2), p.unsqueeze(1)).flatten(1)
+        if self.feature_norm:
+            g = F.normalize(g, dim=1)
         alpha = grl_alpha(progress, max_lambda=self.max_lambda)
         d_out = self.discriminator(grad_reverse(g, alpha))
         d_lab = domain_labels(len(fs), len(ft), f.device)

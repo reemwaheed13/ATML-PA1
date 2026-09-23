@@ -1,0 +1,6 @@
+# DAN with alignment warm-up ramp at the spec-mandated lambda_mmd = 1 (main comparison).
+run: dan_warmup
+method: dan
+uses_target: true
+lambda_mmd: 1.0
+lambda_warmup_frac: 0.15

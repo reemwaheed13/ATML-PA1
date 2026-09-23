@@ -1,0 +1,5 @@
+# DAN-DG with alignment warm-up ramp at the spec-mandated lambda_dg = 1 (main comparison).
+run: dan_dg_warmup
+method: dan_dg
+lambda_dg: 1.0
+lambda_warmup_frac: 0.15

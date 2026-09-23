@@ -1,0 +1,8 @@
+# DANN Failure-B fix: L2 feature-norm into discriminator + lower AdamW LR.
+# max_lambda / alpha schedule / grad clip unchanged from the baseline.
+run: dann_fix
+method: dann
+uses_target: true
+max_lambda: 1.0
+feature_norm: true
+lr: 3.0e-5
