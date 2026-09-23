@@ -1,0 +1,9 @@
+run: proser
+method: proser
+init_checkpoint: checkpoints/task4/vanilla/best.pt
+train_transform: default
+lr: 1.0e-3
+max_epochs: 50
+num_dummy: 5
+beta: 1.0
+gamma: 0.1

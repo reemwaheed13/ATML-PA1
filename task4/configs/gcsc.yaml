@@ -1,0 +1,3 @@
+run: gcsc
+method: gcsc
+train_transform: gcsc

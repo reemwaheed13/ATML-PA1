@@ -1,0 +1,10 @@
+seed: 6304
+num_classes: 10
+split_path: task4/data/splits/cifar10_seed6304.json
+train_transform: default
+batch_size: 128
+lr: 0.1
+momentum: 0.9
+weight_decay: 5.0e-4
+max_epochs: 100
+num_workers: 2
