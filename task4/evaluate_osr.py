@@ -23,7 +23,7 @@ def load_cache(model):
     p = os.path.join(CACHE_DIR, f'{model}.pt')
     if not os.path.exists(p):
         return None
-    return torch.load(p, map_location='cpu')
+    return torch.load(p, map_location='cpu', weights_only=False)
 
 
 def vanilla_scorer(cache):

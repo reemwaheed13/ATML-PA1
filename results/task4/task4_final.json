@@ -1,0 +1,131 @@
+{
+  "table1_vanilla_scores": {
+    "MSP": {
+      "auroc_near": 0.8027878125000001,
+      "auroc_far": 0.891266375,
+      "auroc_all": 0.84702709375,
+      "tau": 0.17173922061920166,
+      "test_accept": 0.9497,
+      "near_reject": 0.27375,
+      "far_reject": 0.4575,
+      "fpr95_near": 0.72625,
+      "fpr95_far": 0.5425
+    },
+    "MLS": {
+      "auroc_near": 0.7824485625,
+      "auroc_far": 0.8841053125000001,
+      "auroc_all": 0.8332769375,
+      "tau": -5.725428104400635,
+      "test_accept": 0.9518,
+      "near_reject": 0.29,
+      "far_reject": 0.52125,
+      "fpr95_near": 0.71,
+      "fpr95_far": 0.47875
+    },
+    "Energy": {
+      "auroc_near": 0.7824290625,
+      "auroc_far": 0.884314375,
+      "auroc_all": 0.83337171875,
+      "tau": -5.93880033493042,
+      "test_accept": 0.9523,
+      "near_reject": 0.29125,
+      "far_reject": 0.5375,
+      "fpr95_near": 0.70875,
+      "fpr95_far": 0.4625
+    },
+    "Mahalanobis": {
+      "auroc_near": 0.7997640625,
+      "auroc_far": 0.9177300625,
+      "auroc_all": 0.8587470625,
+      "tau": 2901.2820312500007,
+      "test_accept": 0.9454,
+      "near_reject": 0.30625,
+      "far_reject": 0.53125,
+      "fpr95_near": 0.69375,
+      "fpr95_far": 0.46875
+    }
+  },
+  "table2_model_comparison": {
+    "vanilla": {
+      "auroc_near": 0.7824485625,
+      "auroc_far": 0.8841053125000001,
+      "auroc_all": 0.8332769375,
+      "tau": -5.725428104400635,
+      "test_accept": 0.9518,
+      "near_reject": 0.29,
+      "far_reject": 0.52125,
+      "fpr95_near": 0.71,
+      "fpr95_far": 0.47875,
+      "csa": 0.9459,
+      "score": "MLS"
+    },
+    "gcsc": {
+      "auroc_near": 0.8159284375,
+      "auroc_far": 0.9041432500000001,
+      "auroc_all": 0.86003584375,
+      "tau": -6.231584548950195,
+      "test_accept": 0.9443,
+      "near_reject": 0.375,
+      "far_reject": 0.59625,
+      "fpr95_near": 0.625,
+      "fpr95_far": 0.40375,
+      "csa": 0.9506,
+      "score": "MLS"
+    }
+  },
+  "vanilla_mls_tau": -5.725428104400635,
+  "failures": {
+    "near": [
+      {
+        "split": "near",
+        "index": 466,
+        "unknown_class": "bus",
+        "predicted_known": "truck",
+        "u": -11.669976234436035,
+        "tau": -5.725428104400635
+      },
+      {
+        "split": "near",
+        "index": 738,
+        "unknown_class": "wolf",
+        "predicted_known": "cat",
+        "u": -11.657082557678223,
+        "tau": -5.725428104400635
+      },
+      {
+        "split": "near",
+        "index": 760,
+        "unknown_class": "fox",
+        "predicted_known": "cat",
+        "u": -11.454583168029785,
+        "tau": -5.725428104400635
+      }
+    ],
+    "far": [
+      {
+        "split": "far",
+        "index": 213,
+        "unknown_class": "keyboard",
+        "predicted_known": "truck",
+        "u": -12.058459281921387,
+        "tau": -5.725428104400635
+      },
+      {
+        "split": "far",
+        "index": 299,
+        "unknown_class": "keyboard",
+        "predicted_known": "cat",
+        "u": -12.007416725158691,
+        "tau": -5.725428104400635
+      },
+      {
+        "split": "far",
+        "index": 425,
+        "unknown_class": "sunflower",
+        "predicted_known": "bird",
+        "u": -11.891020774841309,
+        "tau": -5.725428104400635
+      }
+    ]
+  }
+}
