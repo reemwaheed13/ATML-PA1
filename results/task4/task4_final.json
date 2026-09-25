@@ -71,6 +71,32 @@
       "fpr95_far": 0.40375,
       "csa": 0.9506,
       "score": "MLS"
+    },
+    "proser": {
+      "auroc_near": 0.8134394375,
+      "auroc_far": 0.8762088750000001,
+      "auroc_all": 0.8448241562500001,
+      "tau": -4.871307373046875,
+      "test_accept": 0.9487,
+      "near_reject": 0.32625,
+      "far_reject": 0.49375,
+      "fpr95_near": 0.67375,
+      "fpr95_far": 0.50625,
+      "csa": 0.9411,
+      "score": "MLS"
+    },
+    "proser_placeholder": {
+      "auroc_near": 0.8049995624999999,
+      "auroc_far": 0.885345625,
+      "auroc_all": 0.8451725937500001,
+      "tau": 0.6113535761833191,
+      "test_accept": 0.952,
+      "near_reject": 0.32,
+      "far_reject": 0.5075,
+      "fpr95_near": 0.68,
+      "fpr95_far": 0.4925,
+      "csa": 0.9411,
+      "score": "placeholder"
     }
   },
   "vanilla_mls_tau": -5.725428104400635,
